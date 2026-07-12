@@ -1,12 +1,3 @@
-export const TRUSTED_BY = [
-  "University of Melbourne", "Seoul National University", "Kyoto University", "NUS Singapore",
-  "Universitas Indonesia", "Mahidol University", "Tsinghua University", "IIT Bombay",
-  "University of Cape Town", "Cairo University", "Universiti Malaya", "Chulalongkorn University",
-  "King Abdulaziz University", "University of São Paulo", "Nanyang Technological University",
-  "Universitas Gadjah Mada", "Peking University", "University of Hong Kong",
-  "National Research Council", "WHO Collaborating Centre",
-];
-
 export const STATS = [
   { value: 15000, suffix: "+", label: "Manuskrip Diedit" },
   { value: 95, suffix: "%", label: "Kepuasan Klien" },

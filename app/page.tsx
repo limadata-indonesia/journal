@@ -1,5 +1,4 @@
 import { Hero } from "@/components/Hero";
-import { TrustedBy } from "@/components/TrustedBy";
 import { Stats } from "@/components/Stats";
 import { Services } from "@/components/Services";
 import { Workflow } from "@/components/Workflow";
@@ -18,7 +17,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Hero />
-      <TrustedBy />
       <Stats />
       <Services />
       <Workflow />
