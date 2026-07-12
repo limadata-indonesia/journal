@@ -5,6 +5,10 @@ import clsx from "clsx";
 import { Badge } from "./ui/Badge";
 
 const TABS = ["Original", "Edited"] as const;
+const TAB_LABELS: Record<(typeof TABS)[number], string> = {
+  Original: "Naskah Asli",
+  Edited: "Hasil Editing",
+};
 
 export function BeforeAfterEditor() {
   const [tab, setTab] = useState<(typeof TABS)[number]>("Edited");
@@ -13,17 +17,17 @@ export function BeforeAfterEditor() {
     <section className="bg-surface py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">See the difference, line by line</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Lihat perbedaannya, baris demi baris</h2>
           <p className="mt-4 text-lg text-muted">
-            A real excerpt, before and after our scientific editing process.
+            Contoh nyata, sebelum dan sesudah proses scientific editing kami.
           </p>
         </div>
 
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <Badge tone="warning">Grammar</Badge>
-          <Badge tone="primary">Academic tone</Badge>
-          <Badge tone="success">Conciseness</Badge>
-          <Badge tone="neutral">Clarity</Badge>
+          <Badge tone="warning">Tata Bahasa</Badge>
+          <Badge tone="primary">Gaya Bahasa Akademik</Badge>
+          <Badge tone="success">Keringkasan</Badge>
+          <Badge tone="neutral">Kejelasan</Badge>
         </div>
 
         <div className="mt-4 flex justify-center gap-2 lg:hidden">
@@ -36,14 +40,14 @@ export function BeforeAfterEditor() {
                 tab === t ? "bg-primary text-white" : "border border-border text-muted"
               )}
             >
-              {t}
+              {TAB_LABELS[t]}
             </button>
           ))}
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className={clsx("rounded-2xl border border-border bg-background p-6", tab !== "Original" && "hidden lg:block")}>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Original</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Naskah Asli</p>
             <p className="mt-4 text-base leading-relaxed text-text/80">
               This study{" "}
               <mark className="rounded bg-warning/20 px-1 text-text line-through decoration-warning">
@@ -70,7 +74,7 @@ export function BeforeAfterEditor() {
           </div>
 
           <div className={clsx("rounded-2xl border border-border bg-background p-6", tab !== "Edited" && "hidden lg:block")}>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Edited</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Hasil Editing</p>
             <p className="mt-4 text-base leading-relaxed text-text">
               This study{" "}
               <mark className="rounded bg-success/20 px-1 text-text">investigates</mark> the effect of

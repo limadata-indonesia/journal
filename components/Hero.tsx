@@ -20,7 +20,7 @@ export function Hero() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-4xl font-bold leading-[1.1] tracking-tight text-primary lg:text-6xl"
           >
-            Publish with Confidence.
+            Terbitkan dengan Percaya Diri.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -28,7 +28,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-3 text-2xl font-semibold text-text/80 lg:text-3xl"
           >
-            Professional Academic Editing for High-Impact Journals.
+            Editing Akademik Profesional untuk Jurnal Bereputasi Tinggi.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -36,9 +36,9 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 max-w-lg text-lg text-muted"
           >
-            From language editing to journal submission support, our expert editors help
-            researchers improve clarity, strengthen manuscripts, and increase publication
-            readiness.
+            Dari editing bahasa hingga dukungan submisi jurnal, editor ahli kami membantu
+            peneliti memperjelas tulisan, memperkuat manuskrip, dan meningkatkan kesiapan
+            untuk dipublikasikan.
           </motion.p>
 
           <motion.div
@@ -48,10 +48,10 @@ export function Hero() {
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
             <Button size="lg">
-              <Upload className="h-4 w-4" /> Upload Your Manuscript
+              <Upload className="h-4 w-4" /> Unggah Manuskripmu
             </Button>
             <Button size="lg" variant="outline">
-              <FileSearch className="h-4 w-4" /> See Sample Edits
+              <FileSearch className="h-4 w-4" /> Lihat Contoh Editing
             </Button>
           </motion.div>
         </div>

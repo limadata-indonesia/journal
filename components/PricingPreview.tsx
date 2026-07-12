@@ -11,8 +11,8 @@ export function PricingPreview() {
     <section id="pricing" className="bg-surface py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Packages built around your manuscript</h2>
-          <p className="mt-4 text-lg text-muted">Every engagement is scoped with an editor, not a price list.</p>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Paket yang disesuaikan dengan manuskripmu</h2>
+          <p className="mt-4 text-lg text-muted">Setiap kerja sama dirancang bersama editor, bukan sekadar daftar harga.</p>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -57,7 +57,7 @@ export function PricingPreview() {
                 className="mt-8"
                 variant={tier.highlighted ? "secondary" : "outline"}
               >
-                Request Consultation
+                Ajukan Konsultasi
               </Button>
             </motion.div>
           ))}

@@ -10,9 +10,9 @@ export function Services() {
     <section id="services" className="py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Editing services built for publication</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Layanan editing untuk kesiapan publikasi</h2>
           <p className="mt-4 text-lg text-muted">
-            Every service is delivered by subject-matter expert editors, not generalists.
+            Setiap layanan dikerjakan oleh editor ahli sesuai bidang keilmuan, bukan editor umum.
           </p>
         </div>
 

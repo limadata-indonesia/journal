@@ -6,11 +6,11 @@ import { Menu, X } from "lucide-react";
 import { Button } from "./ui/Button";
 
 const NAV_LINKS = [
-  { label: "Solutions", href: "#services" },
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Resources", href: "#faq" },
-  { label: "About", href: "#why-us" },
+  { label: "Solusi", href: "#services" },
+  { label: "Layanan", href: "#services" },
+  { label: "Harga", href: "#pricing" },
+  { label: "Sumber Daya", href: "#faq" },
+  { label: "Tentang Kami", href: "#why-us" },
 ];
 
 export function Navbar() {
@@ -33,9 +33,9 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button variant="ghost" size="sm">
-            Login
+            Masuk
           </Button>
-          <Button size="sm">Get Started</Button>
+          <Button size="sm">Mulai Sekarang</Button>
         </div>
 
         <button
@@ -56,9 +56,9 @@ export function Navbar() {
             ))}
             <div className="mt-2 flex flex-col gap-2">
               <Button variant="outline" size="sm">
-                Login
+                Masuk
               </Button>
-              <Button size="sm">Get Started</Button>
+              <Button size="sm">Mulai Sekarang</Button>
             </div>
           </div>
         </div>

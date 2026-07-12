@@ -8,8 +8,8 @@ export function SubjectExpertise() {
     <section className="bg-surface py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Subject-matter expertise, not generalists</h2>
-          <p className="mt-4 text-lg text-muted">Editors matched precisely to your research field.</p>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Ahli sesuai bidang keilmuan, bukan editor umum</h2>
+          <p className="mt-4 text-lg text-muted">Editor yang dicocokkan secara presisi dengan bidang risetmu.</p>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">

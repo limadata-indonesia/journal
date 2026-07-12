@@ -43,9 +43,9 @@ export function ManuscriptAnalyzer() {
     <section className="py-24">
       <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">See your manuscript, instantly analyzed</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Lihat manuskripmu dianalisis secara instan</h2>
           <p className="mt-4 text-lg text-muted">
-            Drop your file below to preview how our AI analysis works before an editor ever sees it.
+            Unggah filemu di bawah untuk melihat cara kerja analisis AI kami sebelum ditinjau editor.
           </p>
         </div>
 
@@ -71,8 +71,8 @@ export function ManuscriptAnalyzer() {
                 <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent">
                   <UploadCloud className="h-6 w-6" />
                 </span>
-                <p className="mt-4 text-base font-semibold text-text">Drag and drop your manuscript</p>
-                <p className="mt-1 text-sm text-muted">or click to browse — .docx, .pdf up to 25MB</p>
+                <p className="mt-4 text-base font-semibold text-text">Seret dan lepas manuskripmu di sini</p>
+                <p className="mt-1 text-sm text-muted">atau klik untuk memilih file — .docx, .pdf hingga 25MB</p>
               </motion.div>
             )}
 
@@ -85,7 +85,7 @@ export function ManuscriptAnalyzer() {
                 className="flex flex-col items-center justify-center rounded-3xl border border-border bg-surface p-16 text-center"
               >
                 <Loader2 className="h-8 w-8 animate-spin text-accent" />
-                <p className="mt-4 text-sm font-medium text-text">Analyzing {fileName}...</p>
+                <p className="mt-4 text-sm font-medium text-text">Menganalisis {fileName}...</p>
               </motion.div>
             )}
 
@@ -107,19 +107,19 @@ export function ManuscriptAnalyzer() {
                     onClick={() => setPhase("idle")}
                     className="text-xs font-medium text-muted hover:text-text"
                   >
-                    Analyze another
+                    Analisis file lain
                   </button>
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <ResultRow icon={FileText} label="Word Count" value={ANALYZER_RESULT.wordCount} />
-                  <ResultRow icon={Clock} label="Estimated Delivery" value={ANALYZER_RESULT.estimatedDelivery} />
-                  <ResultRow icon={UserCheck} label="Recommended Editor" value={ANALYZER_RESULT.recommendedEditor} />
-                  <ResultRow icon={Target} label="Journal Difficulty" value={ANALYZER_RESULT.journalDifficulty} />
-                  <ResultRow icon={DollarSign} label="Estimated Price" value={ANALYZER_RESULT.estimatedPrice} />
+                  <ResultRow icon={FileText} label="Jumlah Kata" value={ANALYZER_RESULT.wordCount} />
+                  <ResultRow icon={Clock} label="Estimasi Pengiriman" value={ANALYZER_RESULT.estimatedDelivery} />
+                  <ResultRow icon={UserCheck} label="Editor yang Disarankan" value={ANALYZER_RESULT.recommendedEditor} />
+                  <ResultRow icon={Target} label="Tingkat Kesulitan Jurnal" value={ANALYZER_RESULT.journalDifficulty} />
+                  <ResultRow icon={DollarSign} label="Estimasi Harga" value={ANALYZER_RESULT.estimatedPrice} />
                   <div className="rounded-2xl bg-surface p-4">
                     <div className="flex items-center gap-1.5 text-xs text-muted">
-                      <Gauge className="h-3.5 w-3.5" /> Publication Readiness
+                      <Gauge className="h-3.5 w-3.5" /> Kesiapan Publikasi
                     </div>
                     <div className="mt-2 flex items-center gap-2">
                       <div className="h-2 flex-1 overflow-hidden rounded-full bg-border">
@@ -137,7 +137,7 @@ export function ManuscriptAnalyzer() {
                   </div>
                 </div>
 
-                <Button className="mt-6 w-full sm:w-auto">Continue to Editor Matching</Button>
+                <Button className="mt-6 w-full sm:w-auto">Lanjut ke Pencocokan Editor</Button>
               </motion.div>
             )}
           </AnimatePresence>

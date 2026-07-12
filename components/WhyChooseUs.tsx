@@ -9,7 +9,7 @@ export function WhyChooseUs() {
     <section id="why-us" className="py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Why researchers choose Publiora</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Mengapa peneliti memilih Publiora</h2>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">

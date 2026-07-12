@@ -14,10 +14,10 @@ export function FinalCTA() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-2xl px-6 text-center lg:px-10"
       >
-        <h2 className="text-3xl font-bold text-white lg:text-4xl">Ready to publish with confidence?</h2>
-        <p className="mt-4 text-lg text-white/70">Upload your manuscript today and meet your editor within hours.</p>
+        <h2 className="text-3xl font-bold text-white lg:text-4xl">Siap terbitkan dengan percaya diri?</h2>
+        <p className="mt-4 text-lg text-white/70">Unggah manuskripmu hari ini dan bertemu editormu dalam hitungan jam.</p>
         <Button size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
-          <Upload className="h-4 w-4" /> Upload Your Manuscript
+          <Upload className="h-4 w-4" /> Unggah Manuskripmu
         </Button>
       </motion.div>
     </section>

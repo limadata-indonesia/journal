@@ -10,9 +10,9 @@ export function PublicationJourney() {
     <section className="py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">The full publication journey</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Perjalanan publikasi secara menyeluruh</h2>
           <p className="mt-4 text-lg text-muted">
-            We step in at the moments that matter most for acceptance.
+            Kami hadir di momen-momen yang paling menentukan untuk penerimaan.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export function PublicationJourney() {
               <p className={clsx("mt-3 text-sm font-semibold", step.helped ? "text-primary" : "text-text")}>
                 {step.title}
               </p>
-              {step.helped && <p className="mt-1 text-xs text-muted">Publiora helps here</p>}
+              {step.helped && <p className="mt-1 text-xs text-muted">Publiora membantu di sini</p>}
             </motion.div>
           ))}
         </div>

@@ -17,9 +17,9 @@ export function SampleManuscriptViewer() {
     <section className="bg-surface py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Review edits, just like Word</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Tinjau perubahan, seperti di Word</h2>
           <p className="mt-4 text-lg text-muted">
-            Every change is tracked, commented, and yours to accept or reject.
+            Setiap perubahan tercatat, diberi komentar, dan kamu yang memutuskan untuk menerima atau menolaknya.
           </p>
         </div>
 
@@ -59,13 +59,13 @@ export function SampleManuscriptViewer() {
                             onClick={() => setStatuses((s) => ({ ...s, [p.id]: "accepted" }))}
                             className="flex items-center gap-1 rounded-full bg-success/10 px-2.5 py-1 text-xs font-medium text-success transition hover:bg-success/20"
                           >
-                            <Check className="h-3 w-3" /> Accept
+                            <Check className="h-3 w-3" /> Terima
                           </button>
                           <button
                             onClick={() => setStatuses((s) => ({ ...s, [p.id]: "rejected" }))}
                             className="flex items-center gap-1 rounded-full bg-error/10 px-2.5 py-1 text-xs font-medium text-error transition hover:bg-error/20"
                           >
-                            <X className="h-3 w-3" /> Reject
+                            <X className="h-3 w-3" /> Tolak
                           </button>
                         </>
                       ) : (
@@ -73,7 +73,7 @@ export function SampleManuscriptViewer() {
                           onClick={() => setStatuses((s) => ({ ...s, [p.id]: "pending" }))}
                           className="text-xs font-medium text-muted hover:text-text"
                         >
-                          {status === "accepted" ? "Change accepted" : "Original kept"} &middot; undo
+                          {status === "accepted" ? "Perubahan diterima" : "Naskah asli dipertahankan"} &middot; batalkan
                         </button>
                       )}
                     </div>
@@ -94,7 +94,7 @@ export function SampleManuscriptViewer() {
                 )}
               >
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-primary">
-                  <MessageSquare className="h-3.5 w-3.5" /> Editor comment
+                  <MessageSquare className="h-3.5 w-3.5" /> Komentar editor
                 </div>
                 <p className="mt-1.5 text-sm text-muted">{p.comment}</p>
               </div>

@@ -11,9 +11,9 @@ export function Workflow() {
     <section className="bg-surface py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">AI-assisted, human-perfected</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Dibantu AI, disempurnakan manusia</h2>
           <p className="mt-4 text-lg text-muted">
-            Every manuscript moves through the same rigorous six-step process.
+            Setiap manuskrip melewati proses enam tahap yang sama ketatnya.
           </p>
         </div>
 

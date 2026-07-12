@@ -3,10 +3,10 @@ import { Mail } from "lucide-react";
 import { Button } from "./ui/Button";
 
 const COLUMNS = [
-  { title: "Products", links: ["Academic Editing", "Scientific Editing", "Publication Concierge"] },
-  { title: "Resources", links: ["Sample Edits", "Editor Network", "Research Guides"] },
-  { title: "Pricing", links: ["Academic Editing", "Scientific Editing", "Enterprise"] },
-  { title: "Company", links: ["Careers", "Privacy", "Terms", "Contact"] },
+  { title: "Produk", links: ["Academic Editing", "Scientific Editing", "Publication Concierge"] },
+  { title: "Sumber Daya", links: ["Contoh Editing", "Jaringan Editor", "Panduan Riset"] },
+  { title: "Harga", links: ["Academic Editing", "Scientific Editing", "Enterprise"] },
+  { title: "Perusahaan", links: ["Karier", "Privasi", "Ketentuan", "Kontak"] },
 ];
 
 export function Footer() {
@@ -17,7 +17,7 @@ export function Footer() {
           <div className="col-span-2">
             <span className="text-xl font-bold tracking-tight text-primary">Publiora</span>
             <p className="mt-3 max-w-xs text-sm text-muted">
-              Professional academic editing for high-impact journals, trusted by researchers worldwide.
+              Editing akademik profesional untuk jurnal bereputasi tinggi, dipercaya oleh peneliti di seluruh dunia.
             </p>
             <div className="mt-5">
               <p className="text-sm font-semibold text-text">Newsletter</p>
@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted sm:flex-row">
-          <p>© 2026 Publiora. All rights reserved.</p>
+          <p>© 2026 Publiora. Semua hak dilindungi.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-text">LinkedIn</Link>
             <Link href="#" className="hover:text-text">X</Link>

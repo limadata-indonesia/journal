@@ -12,14 +12,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Publiora — Publish with Confidence",
+  title: "Publiora — Terbitkan dengan Percaya Diri",
   description:
-    "Professional academic editing for high-impact journals. From language editing to journal submission support, Publiora helps researchers strengthen manuscripts and increase publication readiness.",
+    "Editing akademik profesional untuk jurnal bereputasi tinggi. Dari editing bahasa hingga dukungan submisi jurnal, Publiora membantu peneliti memperkuat manuskrip dan meningkatkan kesiapan publikasi.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="id" className={inter.variable}>
       <body className="antialiased">
         <Navbar />
         {children}

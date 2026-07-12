@@ -18,41 +18,41 @@ export function DashboardMockup() {
           </span>
           <div>
             <p className="text-sm font-semibold text-text">Manuscript_v3_final.docx</p>
-            <p className="text-xs text-muted">Uploaded 2 minutes ago</p>
+            <p className="text-xs text-muted">Diunggah 2 menit lalu</p>
           </div>
         </div>
         <span className="rounded-full bg-success/10 px-2.5 py-1 text-[11px] font-semibold text-success">
-          Processing
+          Diproses
         </span>
       </div>
 
       <div className="mt-6 grid grid-cols-2 gap-3">
         <div className="rounded-2xl bg-surface p-4">
-          <p className="text-xs text-muted">Word Count</p>
-          <p className="mt-1 text-lg font-bold text-text">6,842</p>
+          <p className="text-xs text-muted">Jumlah Kata</p>
+          <p className="mt-1 text-lg font-bold text-text">6.842</p>
         </div>
         <div className="rounded-2xl bg-surface p-4">
-          <p className="text-xs text-muted">Recommended Service</p>
+          <p className="text-xs text-muted">Layanan yang Disarankan</p>
           <p className="mt-1 text-sm font-semibold text-text">Scientific Editing</p>
         </div>
         <div className="rounded-2xl bg-surface p-4">
           <div className="flex items-center gap-1.5 text-xs text-muted">
-            <User className="h-3.5 w-3.5" /> Assigned Editor
+            <User className="h-3.5 w-3.5" /> Editor yang Ditugaskan
           </div>
           <p className="mt-1 text-sm font-semibold text-text">Dr. Farah Al-Sayed</p>
         </div>
         <div className="rounded-2xl bg-surface p-4">
           <div className="flex items-center gap-1.5 text-xs text-muted">
-            <Calendar className="h-3.5 w-3.5" /> Delivery Date
+            <Calendar className="h-3.5 w-3.5" /> Tanggal Pengiriman
           </div>
-          <p className="mt-1 text-sm font-semibold text-text">Aug 14, 2026</p>
+          <p className="mt-1 text-sm font-semibold text-text">14 Agu 2026</p>
         </div>
       </div>
 
       <div className="mt-4 rounded-2xl border border-border p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5 text-xs font-medium text-muted">
-            <Gauge className="h-3.5 w-3.5" /> Publication Readiness
+            <Gauge className="h-3.5 w-3.5" /> Kesiapan Publikasi
           </div>
           <span className="text-sm font-bold text-primary">72%</span>
         </div>
@@ -68,7 +68,7 @@ export function DashboardMockup() {
 
       <div className="mt-4 flex items-center gap-2 text-xs text-success">
         <CheckCircle2 className="h-4 w-4" />
-        Matched with a Q1 Scopus-indexed subject editor
+        Dicocokkan dengan editor ahli target jurnal Q1 terindeks Scopus
       </div>
     </motion.div>
   );

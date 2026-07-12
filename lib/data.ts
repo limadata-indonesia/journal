@@ -8,137 +8,139 @@ export const TRUSTED_BY = [
 ];
 
 export const STATS = [
-  { value: 15000, suffix: "+", label: "Manuscripts Edited" },
-  { value: 95, suffix: "%", label: "Client Satisfaction" },
-  { value: 120, suffix: "+", label: "Subject Editors" },
-  { value: 42, suffix: "", label: "Research Fields" },
-  { value: 65, suffix: "+", label: "Countries" },
+  { value: 15000, suffix: "+", label: "Manuskrip Diedit" },
+  { value: 95, suffix: "%", label: "Kepuasan Klien" },
+  { value: 120, suffix: "+", label: "Editor Bidang Keahlian" },
+  { value: 42, suffix: "", label: "Bidang Riset" },
+  { value: 65, suffix: "+", label: "Negara" },
 ];
 
 export const SERVICES = [
-  { icon: "PenLine", title: "Academic Proofreading", description: "Grammar, spelling, and punctuation refined to journal standards." },
-  { icon: "FlaskConical", title: "Scientific Editing", description: "Deep edits for structure, logic, and scientific argumentation." },
-  { icon: "Globe2", title: "Native Editing", description: "Reviewed by native English-speaking subject editors." },
-  { icon: "LayoutTemplate", title: "Journal Formatting", description: "Formatted precisely to your target journal's guidelines." },
-  { icon: "MessageSquareReply", title: "Reviewer Response Editing", description: "Polished, persuasive responses to reviewer comments." },
-  { icon: "Languages", title: "Translation", description: "Full manuscript translation with subject-matter accuracy." },
-  { icon: "Rocket", title: "Publication Support", description: "End-to-end guidance from submission to acceptance." },
-  { icon: "BarChart3", title: "Statistical Review", description: "Verification of statistical methods and reporting." },
+  { icon: "PenLine", title: "Proofreading Akademik", description: "Tata bahasa, ejaan, dan tanda baca disempurnakan sesuai standar jurnal." },
+  { icon: "FlaskConical", title: "Scientific Editing", description: "Penyuntingan mendalam untuk struktur, logika, dan argumentasi ilmiah." },
+  { icon: "Globe2", title: "Native Editing", description: "Ditinjau oleh editor penutur asli bahasa Inggris sesuai bidang keahlian." },
+  { icon: "LayoutTemplate", title: "Format Jurnal", description: "Diformat secara presisi sesuai panduan jurnal tujuanmu." },
+  { icon: "MessageSquareReply", title: "Editing Respons Reviewer", description: "Respons yang rapi dan persuasif untuk komentar reviewer." },
+  { icon: "Languages", title: "Terjemahan", description: "Terjemahan manuskrip lengkap dengan akurasi sesuai bidang keilmuan." },
+  { icon: "Rocket", title: "Dukungan Publikasi", description: "Pendampingan menyeluruh dari submisi hingga diterima." },
+  { icon: "BarChart3", title: "Tinjauan Statistik", description: "Verifikasi metode dan pelaporan statistik." },
 ];
 
 export const WORKFLOW_STEPS = [
-  { title: "Upload Manuscript", description: "Submit your draft securely in any format." },
-  { title: "AI Analysis", description: "Instant scan for clarity, tone, and structure." },
-  { title: "Editor Assignment", description: "Matched to a subject-matter expert editor." },
-  { title: "Editing", description: "Thorough language and scientific refinement." },
-  { title: "Quality Assurance", description: "A second editor reviews every change." },
-  { title: "Final Delivery", description: "Polished manuscript, ready for submission." },
+  { title: "Unggah Manuskrip", description: "Kirim draftmu dengan aman dalam format apa pun." },
+  { title: "Analisis AI", description: "Pemindaian instan untuk kejelasan, gaya bahasa, dan struktur." },
+  { title: "Penugasan Editor", description: "Dicocokkan dengan editor ahli di bidangmu." },
+  { title: "Penyuntingan", description: "Penyempurnaan bahasa dan ilmiah secara menyeluruh." },
+  { title: "Jaminan Kualitas", description: "Editor kedua meninjau setiap perubahan." },
+  { title: "Pengiriman Akhir", description: "Manuskrip siap, siap untuk disubmisikan." },
 ];
 
 export const WHY_CHOOSE_US = [
-  { icon: "GraduationCap", title: "Subject-matter experts", description: "PhD-level editors in your exact field." },
-  { icon: "Globe2", title: "Native English editors", description: "Fluency and nuance that non-native editors miss." },
-  { icon: "BookMarked", title: "Scopus reviewers", description: "Editors who have reviewed for Scopus-indexed journals." },
-  { icon: "Award", title: "Former journal editors", description: "Editors who know what editors look for." },
-  { icon: "Lock", title: "Confidential processing", description: "Your research stays yours, always." },
-  { icon: "Zap", title: "Fast turnaround", description: "Delivery windows built around your deadlines." },
-  { icon: "BadgeCheck", title: "ISO quality process", description: "A documented, repeatable quality standard." },
-  { icon: "RefreshCw", title: "Unlimited revisions", description: "We refine until you're ready to submit." },
+  { icon: "GraduationCap", title: "Ahli sesuai bidang keilmuan", description: "Editor bergelar PhD yang sesuai dengan bidangmu." },
+  { icon: "Globe2", title: "Editor penutur asli Inggris", description: "Kefasihan dan nuansa yang sering terlewat oleh editor non-native." },
+  { icon: "BookMarked", title: "Reviewer Scopus", description: "Editor yang pernah menjadi reviewer jurnal terindeks Scopus." },
+  { icon: "Award", title: "Mantan editor jurnal", description: "Editor yang tahu persis apa yang dicari editor jurnal." },
+  { icon: "Lock", title: "Proses yang rahasia", description: "Risetmu tetap sepenuhnya milikmu." },
+  { icon: "Zap", title: "Pengerjaan cepat", description: "Jadwal pengiriman disesuaikan dengan tenggat waktumu." },
+  { icon: "BadgeCheck", title: "Proses kualitas ISO", description: "Standar kualitas yang terdokumentasi dan konsisten." },
+  { icon: "RefreshCw", title: "Revisi tanpa batas", description: "Kami sempurnakan hingga kamu siap submit." },
 ];
 
 export const SUBJECT_AREAS = [
-  "Medicine", "Engineering", "Business", "Computer Science", "Law", "Education",
-  "Social Science", "Economics", "Chemistry", "Biology", "Physics", "Agriculture",
+  "Kedokteran", "Teknik", "Bisnis", "Ilmu Komputer", "Hukum", "Pendidikan",
+  "Ilmu Sosial", "Ekonomi", "Kimia", "Biologi", "Fisika", "Pertanian",
 ];
 
 export const PUBLICATION_JOURNEY = [
-  { title: "Research", helped: false },
-  { title: "Writing", helped: false },
-  { title: "Editing", helped: true },
-  { title: "Journal Matching", helped: true },
-  { title: "Submission", helped: true },
+  { title: "Riset", helped: false },
+  { title: "Penulisan", helped: false },
+  { title: "Penyuntingan", helped: true },
+  { title: "Pencocokan Jurnal", helped: true },
+  { title: "Submisi", helped: true },
   { title: "Peer Review", helped: true },
-  { title: "Acceptance", helped: false },
+  { title: "Penerimaan", helped: false },
 ];
 
 export const PRICING_TIERS = [
   {
     name: "Academic Editing",
-    tagline: "For manuscripts ready for language refinement.",
-    price: "Starting from",
-    priceDetail: "Custom quote per manuscript",
-    features: ["Grammar & clarity editing", "Academic tone review", "Turnaround from 3 days", "One round of revisions"],
+    tagline: "Untuk manuskrip yang siap disempurnakan bahasanya.",
+    price: "Mulai dari",
+    priceDetail: "Penawaran khusus per manuskrip",
+    features: ["Editing tata bahasa & kejelasan", "Tinjauan gaya bahasa akademik", "Pengerjaan mulai 3 hari", "Satu putaran revisi"],
   },
   {
     name: "Scientific Editing",
-    tagline: "For manuscripts needing structural and scientific depth.",
-    price: "Premium Consultation",
-    priceDetail: "Scoped with a subject editor",
-    features: ["Everything in Academic Editing", "Structure & argument review", "Subject-matter expert assigned", "Unlimited revisions"],
+    tagline: "Untuk manuskrip yang butuh kedalaman struktur dan ilmiah.",
+    price: "Konsultasi Premium",
+    priceDetail: "Disesuaikan bersama editor ahli",
+    features: ["Semua di Academic Editing", "Tinjauan struktur & argumentasi", "Editor sesuai bidang keilmuan", "Revisi tanpa batas"],
     highlighted: true,
   },
   {
     name: "Publication Concierge",
-    tagline: "End-to-end support from draft to acceptance.",
-    price: "Custom Packages",
-    priceDetail: "For labs, institutions & enterprise",
-    features: ["Everything in Scientific Editing", "Journal matching & formatting", "Reviewer response support", "Dedicated publication manager"],
+    tagline: "Dukungan menyeluruh dari draft hingga diterima.",
+    price: "Paket Khusus",
+    priceDetail: "Untuk laboratorium, institusi & enterprise",
+    features: ["Semua di Scientific Editing", "Pencocokan & format jurnal", "Dukungan respons reviewer", "Manajer publikasi khusus"],
   },
 ];
 
 export const TESTIMONIALS = [
   {
-    quote: "Publiora's editors understood the nuance of our methodology section better than I expected. Our manuscript was accepted on the first revision.",
+    quote: "Editor Publiora memahami nuansa bagian metodologi kami lebih baik dari yang saya duga. Manuskrip kami diterima pada revisi pertama.",
     name: "Dr. Anisa Rahman",
-    role: "Professor of Public Health",
+    role: "Profesor Kesehatan Masyarakat",
     institution: "Universitas Gadjah Mada",
   },
   {
-    quote: "As a non-native English speaker, getting feedback from a Scopus reviewer gave me real confidence before submission.",
+    quote: "Sebagai penutur non-native, mendapat masukan dari reviewer Scopus memberi saya keyakinan nyata sebelum submisi.",
     name: "Dr. Hiroshi Tanaka",
-    role: "Senior Researcher",
+    role: "Peneliti Senior",
     institution: "Kyoto University",
   },
   {
-    quote: "The reviewer response editing service alone saved our paper. Precise, persuasive, and fast.",
+    quote: "Layanan editing respons reviewer saja sudah menyelamatkan paper kami. Tepat sasaran, persuasif, dan cepat.",
     name: "Priya Menon, MD",
-    role: "PhD Candidate, Clinical Medicine",
+    role: "Kandidat PhD, Kedokteran Klinis",
     institution: "NUS Singapore",
   },
 ];
 
 export const FAQ_ITEMS = [
   {
-    q: "How is Publiora different from a proofreading service?",
-    a: "Proofreading only checks grammar. Publiora pairs subject-matter expert editors with a structured quality process covering language, scientific argumentation, journal formatting, and submission support — end to end.",
+    q: "Apa bedanya Publiora dengan jasa proofreading biasa?",
+    a: "Proofreading hanya memeriksa tata bahasa. Publiora memadukan editor ahli sesuai bidang keilmuan dengan proses kualitas terstruktur yang mencakup bahasa, argumentasi ilmiah, format jurnal, hingga dukungan submisi — secara menyeluruh.",
   },
   {
-    q: "Who edits my manuscript?",
-    a: "Every manuscript is matched to an editor with relevant subject-matter expertise, many of whom are former journal editors or active Scopus reviewers in your field.",
+    q: "Siapa yang akan menyunting manuskrip saya?",
+    a: "Setiap manuskrip dicocokkan dengan editor yang memiliki keahlian sesuai bidangnya, banyak di antaranya adalah mantan editor jurnal atau reviewer Scopus aktif di bidang tersebut.",
   },
   {
-    q: "How long does editing take?",
-    a: "Turnaround depends on manuscript length and service tier, typically starting from 3 business days for standard editing, with expedited options available.",
+    q: "Berapa lama proses penyuntingan?",
+    a: "Waktu pengerjaan tergantung panjang manuskrip dan paket layanan, umumnya mulai dari 3 hari kerja untuk editing standar, dengan opsi percepatan tersedia.",
   },
   {
-    q: "Is my research kept confidential?",
-    a: "Yes. All manuscripts are processed under strict confidentiality agreements, and access is limited to your assigned editing team.",
+    q: "Apakah riset saya dijaga kerahasiaannya?",
+    a: "Ya. Semua manuskrip diproses di bawah perjanjian kerahasiaan yang ketat, dan akses dibatasi hanya untuk tim editor yang ditugaskan.",
   },
   {
-    q: "Do you support all research fields?",
-    a: "We cover 42 research fields across medicine, engineering, business, computer science, natural sciences, and more — each matched to a specialized editor.",
+    q: "Apakah semua bidang riset didukung?",
+    a: "Kami mencakup 42 bidang riset mulai dari kedokteran, teknik, bisnis, ilmu komputer, ilmu alam, dan lainnya — masing-masing dicocokkan dengan editor spesialis.",
   },
 ];
 
 export const ANALYZER_RESULT = {
-  wordCount: "6,842 words",
-  estimatedDelivery: "4 business days",
-  recommendedEditor: "Dr. Farah Al-Sayed, PhD (Biomedical Engineering)",
-  journalDifficulty: "High — Q1 Scopus-indexed target",
+  wordCount: "6.842 kata",
+  estimatedDelivery: "4 hari kerja",
+  recommendedEditor: "Dr. Farah Al-Sayed, PhD (Teknik Biomedis)",
+  journalDifficulty: "Tinggi — target jurnal Q1 terindeks Scopus",
   publicationReadiness: 72,
-  estimatedPrice: "Custom quote after editor review",
+  estimatedPrice: "Penawaran khusus setelah ditinjau editor",
 };
 
+// Contoh manuskrip berikut sengaja tetap dalam bahasa Inggris karena
+// mendemonstrasikan penyuntingan naskah akademik berbahasa Inggris untuk jurnal internasional.
 export const BEFORE_AFTER = {
   before:
     "This study is investigate the effect of temperature on the growth of bacteria in controlled environment, and result show that higher temperature is increasing the growth rate significantly compare to lower temperature groups.",
@@ -151,18 +153,18 @@ export const SAMPLE_MANUSCRIPT = [
     id: "p1",
     original: "The result of this experiment shows that the proposed method are effective in reducing error rate on the dataset.",
     edited: "The results of this experiment demonstrate that the proposed method effectively reduces the error rate on the dataset.",
-    comment: "Subject-verb agreement corrected; tightened phrasing for academic tone.",
+    comment: "Kesesuaian subjek-predikat diperbaiki; kalimat dipadatkan agar lebih sesuai gaya bahasa akademik.",
   },
   {
     id: "p2",
     original: "In order to test the hypothesis, we was collect data from 240 participant over six month period.",
     edited: "To test the hypothesis, we collected data from 240 participants over a six-month period.",
-    comment: "Corrected verb tense and pluralization; simplified opening clause.",
+    comment: "Bentuk kata kerja dan bentuk jamak diperbaiki; klausa pembuka disederhanakan.",
   },
   {
     id: "p3",
     original: "It can be concluded that the findings of this research is significant contribution to the field.",
     edited: "These findings represent a significant contribution to the field.",
-    comment: "Removed passive hedging; corrected subject-verb agreement for conciseness.",
+    comment: "Kalimat pasif yang bertele-tele dihapus; kesesuaian subjek-predikat diperbaiki agar lebih ringkas.",
   },
 ];

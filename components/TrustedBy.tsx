@@ -5,7 +5,7 @@ export function TrustedBy() {
     <section className="border-y border-border bg-background py-14">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <p className="text-center text-sm font-medium uppercase tracking-wide text-muted">
-          Trusted by researchers at leading institutions worldwide
+          Dipercaya oleh peneliti di institusi terkemuka di seluruh dunia
         </p>
         <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
           {TRUSTED_BY.map((name) => (
