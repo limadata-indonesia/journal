@@ -8,7 +8,7 @@ export function Accordion({ items }: { items: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="flex flex-col divide-y divide-border rounded-2xl border border-border bg-background">
+    <div className="flex flex-col divide-y divide-border rounded border border-border bg-background">
       {items.map((item, i) => (
         <div key={item.q} className="px-6">
           <button

@@ -24,7 +24,7 @@ export function PricingPreview() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className={clsx(
-                "flex flex-col rounded-3xl border p-8",
+                "flex flex-col rounded-lg border p-8",
                 tier.highlighted
                   ? "border-primary bg-primary text-white shadow-premium lg:-translate-y-3"
                   : "border-border bg-background shadow-soft"

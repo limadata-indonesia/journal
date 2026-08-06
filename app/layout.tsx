@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, PT_Serif } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -11,6 +11,15 @@ const inter = Inter({
   display: "swap",
 });
 
+// Elsevier uses PT Serif for headings — used here for headings only, so
+// body copy keeps Inter for readability.
+const ptSerif = PT_Serif({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pt-serif",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Terindeks — Terbitkan dengan Percaya Diri",
   description:
@@ -19,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={inter.variable}>
+    <html lang="id" className={`${inter.variable} ${ptSerif.variable}`}>
       <body className="antialiased">
         <Navbar />
         {children}

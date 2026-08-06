@@ -5,9 +5,9 @@ type Variant = "primary" | "secondary" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-primary text-white hover:bg-secondary shadow-premium",
-  secondary: "bg-accent text-white hover:opacity-90",
-  outline: "border border-border bg-background text-text hover:border-accent/50",
+  primary: "bg-accent text-white hover:bg-accent/90 shadow-soft",
+  secondary: "bg-primary text-white hover:bg-secondary",
+  outline: "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-white",
   ghost: "bg-transparent text-text hover:bg-surface",
 };
 
@@ -24,7 +24,7 @@ export const Button = forwardRef<
   <button
     ref={ref}
     className={clsx(
-      "inline-flex items-center justify-center gap-2 rounded-2xl font-medium transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50",
+      "inline-flex items-center justify-center gap-2 rounded font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50",
       variants[variant],
       sizes[size],
       className

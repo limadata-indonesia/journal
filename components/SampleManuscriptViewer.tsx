@@ -24,7 +24,7 @@ export function SampleManuscriptViewer() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
-          <div className="rounded-3xl border border-border bg-background p-6 shadow-soft lg:p-10">
+          <div className="rounded-lg border border-border bg-background p-6 shadow-soft lg:p-10">
             <div className="flex flex-col gap-6">
               {SAMPLE_MANUSCRIPT.map((p) => {
                 const status = statuses[p.id];
@@ -89,7 +89,7 @@ export function SampleManuscriptViewer() {
                 key={p.id}
                 onMouseEnter={() => setActive(p.id)}
                 className={clsx(
-                  "rounded-2xl border p-4 transition-colors",
+                  "rounded-md border p-4 transition-colors",
                   active === p.id ? "border-accent bg-background shadow-soft" : "border-border bg-background/60"
                 )}
               >

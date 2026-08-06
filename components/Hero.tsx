@@ -1,50 +1,77 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { Upload, FileSearch } from "lucide-react";
 import { Button } from "./ui/Button";
-import { DashboardMockup } from "./DashboardMockup";
+import { HERO_SLIDES } from "@/lib/data";
+
+const AUTO_ADVANCE_MS = 6000;
 
 export function Hero() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setActive((i) => (i + 1) % HERO_SLIDES.length);
+    }, AUTO_ADVANCE_MS);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  const slide = HERO_SLIDES[active];
+
   return (
-    <section className="relative overflow-hidden bg-surface">
+    <section
+      className="relative overflow-hidden bg-primary"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Banner-style background: photo (Unsplash) + gradient scrim for legible
+          white text on the left, Elsevier-style full-bleed hero */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 left-1/3 h-96 w-96 rounded-full bg-accent/10 blur-[120px]" />
+        <Image
+          src="/hero-library.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/40" />
+        <div className="absolute -right-24 top-1/2 h-[32rem] w-[32rem] -translate-y-1/2 rounded-full bg-accent/20 blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto grid max-w-(--container-content) grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
-        <div>
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-4xl font-bold leading-[1.1] tracking-tight text-primary lg:text-6xl"
-          >
-            Terbitkan dengan Percaya Diri.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-3 text-2xl font-semibold text-text/80 lg:text-3xl"
-          >
-            Pendampingan Publikasi Ilmiah untuk Jurnal Terakreditasi Sinta & Terindeks Scopus.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 max-w-lg text-lg text-muted"
-          >
-            Dari pemilihan jurnal yang sesuai bidang risetmu, penyempurnaan bahasa dan
-            struktur, hingga pendampingan submisi dan respons reviewer — kami membantu
-            peneliti Indonesia menembus jurnal Sinta dan Scopus tanpa jalan pintas.
-          </motion.p>
+      <div className="relative mx-auto max-w-(--container-content) px-6 py-20 lg:px-10 lg:py-28">
+        <div className="max-w-2xl">
+          {/* Always-present, single H1 for SEO — stays as the primary headline
+              regardless of which slide is currently showing. */}
+          <h1 className="sr-only">{HERO_SLIDES[0].headline}</h1>
+
+          <div className="min-h-[220px] lg:min-h-[260px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <p className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white lg:text-6xl">
+                  {slide.headline}
+                </p>
+                <p className="font-heading mt-3 text-2xl font-semibold text-white/90 lg:text-3xl">{slide.subheading}</p>
+                <p className="mt-6 max-w-lg text-lg text-white/70">{slide.description}</p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
             <Button size="lg">
@@ -54,10 +81,21 @@ export function Hero() {
               <FileSearch className="h-4 w-4" /> Cek Rekomendasi Jurnal
             </Button>
           </motion.div>
-        </div>
 
-        <div className="flex justify-center lg:justify-end">
-          <DashboardMockup />
+          <div className="mt-10 flex items-center gap-2">
+            {HERO_SLIDES.map((s, i) => (
+              <button
+                key={s.headline}
+                type="button"
+                aria-label={`Slide ${i + 1}: ${s.headline}`}
+                aria-current={i === active}
+                onClick={() => setActive(i)}
+                className={`h-2 rounded-full transition-all ${
+                  i === active ? "w-8 bg-accent" : "w-2 bg-white/30 hover:bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

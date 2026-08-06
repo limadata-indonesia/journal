@@ -6,10 +6,10 @@ import { ALUR_LAYANAN } from "@/lib/data";
 
 export function AlurLayanan() {
   return (
-    <section className="bg-surface py-24">
+    <section className="bg-background py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Alur Layanan Publikasi Terindeks</h2>
+          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Alur Layanan Jasa Publikasi Jurnal Terindeks</h2>
           <p className="mt-4 text-lg text-muted">
             Proses bertahap per termin pembayaran, dari pengiriman manuskrip hingga surat penerimaan (LoA) terbit.
           </p>

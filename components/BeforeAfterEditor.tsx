@@ -46,7 +46,7 @@ export function BeforeAfterEditor() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div className={clsx("rounded-2xl border border-border bg-background p-6", tab !== "Original" && "hidden lg:block")}>
+          <div className={clsx("rounded-md border border-border bg-background p-6", tab !== "Original" && "hidden lg:block")}>
             <p className="text-xs font-semibold uppercase tracking-wide text-muted">Naskah Asli</p>
             <p className="mt-4 text-base leading-relaxed text-text/80">
               This study{" "}
@@ -73,7 +73,7 @@ export function BeforeAfterEditor() {
             </p>
           </div>
 
-          <div className={clsx("rounded-2xl border border-border bg-background p-6", tab !== "Edited" && "hidden lg:block")}>
+          <div className={clsx("rounded-md border border-border bg-background p-6", tab !== "Edited" && "hidden lg:block")}>
             <p className="text-xs font-semibold uppercase tracking-wide text-muted">Hasil Editing</p>
             <p className="mt-4 text-base leading-relaxed text-text">
               This study{" "}

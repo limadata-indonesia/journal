@@ -1,3 +1,27 @@
+// Slide pertama adalah headline utama (dirender sebagai satu-satunya <h1> di
+// DOM demi SEO) — teksnya tidak diubah. Slide berikutnya melengkapi pesan
+// utama dengan sudut pandang lain dari layanan yang sama.
+export const HERO_SLIDES = [
+  {
+    headline: "Jasa Publikasi Jurnal Terpercaya.",
+    subheading: "Pendampingan Publikasi Ilmiah untuk Jurnal Terakreditasi Sinta & Terindeks Scopus.",
+    description:
+      "Dari pemilihan jurnal yang sesuai bidang risetmu, penyempurnaan bahasa dan struktur, hingga pendampingan submisi dan respons reviewer — kami membantu peneliti Indonesia menembus jurnal Sinta dan Scopus tanpa jalan pintas.",
+  },
+  {
+    headline: "Menembus Jurnal Bereputasi Internasional.",
+    subheading: "Scientific Editing & Pencocokan Jurnal Scopus Q1–Q4, DOAJ, hingga Web of Science.",
+    description:
+      "Manuskrip berbahasa Inggrismu disunting oleh editor ahli sesuai bidang, dengan pencocokan jurnal yang realistis berdasarkan peluang penerimaan — bukan sekadar tebakan.",
+  },
+  {
+    headline: "Pendampingan dari Draf hingga Terbit.",
+    subheading: "Bukan Sekadar Editing — Kami Dampingi Setiap Tahap Submisi & Revisi.",
+    description:
+      "Dari rekomendasi jurnal, penyuntingan bahasa, hingga penyusunan respons ke reviewer — tim editor ahli mendampingimu di setiap tahap, tanpa jalan pintas atau jurnal predator.",
+  },
+];
+
 // Angka bersifat ilustratif — ganti dengan data riil sebelum go-live.
 export const STATS = [
   { value: "300+", label: "Manuskrip terbit" },
