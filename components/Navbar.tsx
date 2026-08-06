@@ -20,7 +20,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-(--container-content) items-center justify-between px-6 py-4 lg:px-10">
         <Link href="/" className="text-xl font-bold tracking-tight text-primary">
-          Publiora
+          Terindeks
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">

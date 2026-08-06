@@ -1,115 +1,162 @@
+// Angka bersifat ilustratif — ganti dengan data riil sebelum go-live.
 export const STATS = [
-  { value: 15000, suffix: "+", label: "Manuskrip Diedit" },
-  { value: 95, suffix: "%", label: "Kepuasan Klien" },
-  { value: 120, suffix: "+", label: "Editor Bidang Keahlian" },
-  { value: 42, suffix: "", label: "Bidang Riset" },
-  { value: 65, suffix: "+", label: "Negara" },
+  { value: "300+", label: "Manuskrip terbit" },
+  { value: "150+", label: "Institusi mitra" },
+  { value: "6+", label: "Tahun pengalaman" },
+  { value: "42", label: "Bidang riset dicakup" },
 ];
 
-export const SERVICES = [
-  { icon: "PenLine", title: "Proofreading Akademik", description: "Tata bahasa, ejaan, dan tanda baca disempurnakan sesuai standar jurnal." },
-  { icon: "FlaskConical", title: "Scientific Editing", description: "Penyuntingan mendalam untuk struktur, logika, dan argumentasi ilmiah." },
-  { icon: "Globe2", title: "Native Editing", description: "Ditinjau oleh editor penutur asli bahasa Inggris sesuai bidang keahlian." },
-  { icon: "LayoutTemplate", title: "Format Jurnal", description: "Diformat secara presisi sesuai panduan jurnal tujuanmu." },
-  { icon: "MessageSquareReply", title: "Editing Respons Reviewer", description: "Respons yang rapi dan persuasif untuk komentar reviewer." },
-  { icon: "Languages", title: "Terjemahan", description: "Terjemahan manuskrip lengkap dengan akurasi sesuai bidang keilmuan." },
-  { icon: "Rocket", title: "Dukungan Publikasi", description: "Pendampingan menyeluruh dari submisi hingga diterima." },
-  { icon: "BarChart3", title: "Tinjauan Statistik", description: "Verifikasi metode dan pelaporan statistik." },
-];
-
-export const WORKFLOW_STEPS = [
-  { title: "Unggah Manuskrip", description: "Kirim draftmu dengan aman dalam format apa pun." },
-  { title: "Analisis AI", description: "Pemindaian instan untuk kejelasan, gaya bahasa, dan struktur." },
-  { title: "Penugasan Editor", description: "Dicocokkan dengan editor ahli di bidangmu." },
-  { title: "Penyuntingan", description: "Penyempurnaan bahasa dan ilmiah secara menyeluruh." },
-  { title: "Jaminan Kualitas", description: "Editor kedua meninjau setiap perubahan." },
-  { title: "Pengiriman Akhir", description: "Manuskrip siap, siap untuk disubmisikan." },
-];
-
-export const WHY_CHOOSE_US = [
-  { icon: "GraduationCap", title: "Ahli sesuai bidang keilmuan", description: "Editor bergelar PhD yang sesuai dengan bidangmu." },
-  { icon: "Globe2", title: "Editor penutur asli Inggris", description: "Kefasihan dan nuansa yang sering terlewat oleh editor non-native." },
-  { icon: "BookMarked", title: "Reviewer Scopus", description: "Editor yang pernah menjadi reviewer jurnal terindeks Scopus." },
-  { icon: "Award", title: "Mantan editor jurnal", description: "Editor yang tahu persis apa yang dicari editor jurnal." },
-  { icon: "Lock", title: "Proses yang rahasia", description: "Risetmu tetap sepenuhnya milikmu." },
-  { icon: "Zap", title: "Pengerjaan cepat", description: "Jadwal pengiriman disesuaikan dengan tenggat waktumu." },
-  { icon: "BadgeCheck", title: "Proses kualitas ISO", description: "Standar kualitas yang terdokumentasi dan konsisten." },
-  { icon: "RefreshCw", title: "Revisi tanpa batas", description: "Kami sempurnakan hingga kamu siap submit." },
-];
-
-export const SUBJECT_AREAS = [
-  "Kedokteran", "Teknik", "Bisnis", "Ilmu Komputer", "Hukum", "Pendidikan",
-  "Ilmu Sosial", "Ekonomi", "Kimia", "Biologi", "Fisika", "Pertanian",
-];
-
-export const PUBLICATION_JOURNEY = [
-  { title: "Riset", helped: false },
-  { title: "Penulisan", helped: false },
-  { title: "Penyuntingan", helped: true },
-  { title: "Pencocokan Jurnal", helped: true },
-  { title: "Submisi", helped: true },
-  { title: "Peer Review", helped: true },
-  { title: "Penerimaan", helped: false },
-];
-
-export const PRICING_TIERS = [
+// Alur layanan riil (bertahap per termin pembayaran), mengikuti flowchart
+// operasional referensi — bukan sekadar ringkasan marketing enam langkah.
+export const ALUR_LAYANAN = [
   {
-    name: "Academic Editing",
-    tagline: "Untuk manuskrip yang siap disempurnakan bahasanya.",
-    price: "Mulai dari",
-    priceDetail: "Penawaran khusus per manuskrip",
-    features: ["Editing tata bahasa & kejelasan", "Tinjauan gaya bahasa akademik", "Pengerjaan mulai 3 hari", "Satu putaran revisi"],
+    termin: "Termin 1",
+    note: "Pembayaran 30% di awal",
+    steps: [
+      {
+        title: "Penulis Mengirimkan Manuskrip",
+      },
+      {
+        title: "Filtrasi Kelayakan Manuskrip",
+        detail: "Maks. similaritas 50% & deteksi AI 40%",
+        branch: {
+          pass: "Memenuhi Standar",
+          fail: "Tidak Memenuhi Standar",
+          failNote: "Manuskrip dikembalikan ke penulis.",
+        },
+      },
+      {
+        title: "Penulis Menandatangani SPK & PKS",
+        detail: "Surat perjanjian kerja & kerja sama yang telah disepakati.",
+      },
+      {
+        title: "Manuskrip Diskrining Tenaga Ahli",
+        detail: "Oleh editor sesuai bidang disiplin ilmu.",
+      },
+      {
+        title: "Terindeks Menerbitkan Hasil Skrining",
+        branch: {
+          pass: "Revisi Minor",
+          fail: "Revisi Mayor",
+          failNote: "Penulis merevisi & menambahkan data bersifat substansial, lalu diskrining ulang.",
+        },
+      },
+    ],
   },
   {
-    name: "Scientific Editing",
-    tagline: "Untuk manuskrip yang butuh kedalaman struktur dan ilmiah.",
-    price: "Konsultasi Premium",
-    priceDetail: "Disesuaikan bersama editor ahli",
-    features: ["Semua di Academic Editing", "Tinjauan struktur & argumentasi", "Editor sesuai bidang keilmuan", "Revisi tanpa batas"],
+    termin: "Termin 2",
+    note: "Pembayaran 30% saat submisi",
+    steps: [
+      {
+        title: "Proses Drafting Artikel oleh Tim Terindeks",
+      },
+      {
+        title: "Submit ke Jurnal Tujuan",
+        branch: {
+          pass: "Revisi Feedback dari Penerbit",
+          fail: "Ditolak Penerbit",
+          failNote: "Penulis merevisi & menambahkan data bersifat substansial, lalu disubmit ulang.",
+        },
+      },
+    ],
+  },
+  {
+    termin: "Termin 3",
+    note: "Pembayaran 40% setelah diterima",
+    steps: [
+      {
+        title: "Penerbitan LoA oleh Penerbit",
+        detail: "Letter of Acceptance — manuskrip resmi diterima.",
+      },
+    ],
+  },
+];
+
+// Harga bersifat ilustratif (mulai dari) — sesuaikan dengan penawaran aktual
+// sebelum go-live.
+export const PRICING_TIERS = [
+  {
+    name: "Sinta Ready",
+    tagline: "Untuk manuskrip berbahasa Indonesia menuju jurnal terakreditasi Sinta.",
+    price: "Mulai dari",
+    priceDetail: "Rp 3.500.000",
+    priceNote: "per manuskrip",
+    features: ["Editing bahasa & kejelasan akademik", "Rekomendasi jurnal Sinta (S1–S6) sesuai bidang", "Cek plagiarisme & referensi Mendeley", "Pemformatan sesuai template jurnal", "Satu putaran revisi"],
+  },
+  {
+    name: "Scopus Ready",
+    tagline: "Untuk manuskrip berbahasa Inggris menuju jurnal terindeks Scopus.",
+    price: "Mulai dari",
+    priceDetail: "Rp 8.500.000",
+    priceNote: "tergantung kuartil jurnal (Q1–Q4)",
+    features: ["Semua di Sinta Ready", "Scientific editing tingkat lanjut", "Pencocokan jurnal Scopus Q1–Q4", "Turut mencakup jurnal terindeks DOAJ, Web of Science & Copernicus", "Revisi tanpa batas"],
     highlighted: true,
   },
   {
-    name: "Publication Concierge",
-    tagline: "Dukungan menyeluruh dari draft hingga diterima.",
-    price: "Paket Khusus",
-    priceDetail: "Untuk laboratorium, institusi & enterprise",
-    features: ["Semua di Scientific Editing", "Pencocokan & format jurnal", "Dukungan respons reviewer", "Manajer publikasi khusus"],
+    name: "Pendampingan Penuh",
+    tagline: "Dukungan menyeluruh dari draf hingga artikel terindeks.",
+    price: "Penawaran khusus",
+    priceDetail: "Hubungi Kami",
+    priceNote: "untuk laboratorium, institusi & enterprise",
+    features: ["Semua di Scopus Ready", "Pendampingan submisi & korespondensi jurnal", "Dukungan respons reviewer", "Penerbitan buku ber-ISBN", "Pendaftaran HKI (Hak Cipta)", "Manajer publikasi khusus"],
   },
 ];
 
 export const TESTIMONIALS = [
   {
-    quote: "Editor Publiora memahami nuansa bagian metodologi kami lebih baik dari yang saya duga. Manuskrip kami diterima pada revisi pertama.",
+    quote: "Terindeks membantu kami memilih jurnal Sinta 2 yang tepat sesuai topik riset, bukan sekadar merapikan bahasa. Manuskrip kami diterima pada revisi pertama.",
     name: "Dr. Anisa Rahman",
     role: "Profesor Kesehatan Masyarakat",
     institution: "Universitas Gadjah Mada",
   },
   {
-    quote: "Sebagai penutur non-native, mendapat masukan dari reviewer Scopus memberi saya keyakinan nyata sebelum submisi.",
-    name: "Dr. Hiroshi Tanaka",
-    role: "Peneliti Senior",
-    institution: "Kyoto University",
+    quote: "Tim Terindeks mendampingi kami dari pemilihan jurnal hingga menyusun respons untuk reviewer Scopus. Artikel kami akhirnya terindeks Scopus Q2 setelah dua kali revisi.",
+    name: "Dr. Bimo Prakoso",
+    role: "Dosen Teknik Elektro",
+    institution: "Institut Teknologi Bandung",
   },
   {
-    quote: "Layanan editing respons reviewer saja sudah menyelamatkan paper kami. Tepat sasaran, persuasif, dan cepat.",
+    quote: "Layanan pendampingan respons reviewer saja sudah menyelamatkan paper kami menuju jurnal Scopus Q1. Tepat sasaran, persuasif, dan cepat.",
     name: "Priya Menon, MD",
     role: "Kandidat PhD, Kedokteran Klinis",
     institution: "NUS Singapore",
+  },
+  {
+    quote: "Sebagai mahasiswa magister yang baru pertama kali submit ke jurnal Sinta, saya benar-benar terbantu dengan penjelasan tahap demi tahap dan template yang sudah disesuaikan bidang saya.",
+    name: "Siti Nurhaliza, S.T.",
+    role: "Mahasiswa Magister Teknik Industri",
+    institution: "Universitas Indonesia",
+  },
+  {
+    quote: "Respons tim cepat dan transparan di setiap tahap. Draf saya sempat ditolak jurnal pertama, tapi tim membantu menyusun ulang strategi submisi ke jurnal Scopus Q3 yang akhirnya menerima.",
+    name: "Ahmad Fauzan, M.Kom.",
+    role: "Kandidat Doktor Ilmu Komputer",
+    institution: "Universitas Airlangga",
+  },
+  {
+    quote: "Editor kami memahami betul istilah di bidang manajemen dan ekonomi, bukan sekadar memperbaiki tata bahasa. Naskah kami lebih tajam argumentasinya setelah proses penyuntingan.",
+    name: "Dr. Farah Kusuma",
+    role: "Dosen Manajemen",
+    institution: "Universitas Padjadjaran",
   },
 ];
 
 export const FAQ_ITEMS = [
   {
-    q: "Apa bedanya Publiora dengan jasa proofreading biasa?",
-    a: "Proofreading hanya memeriksa tata bahasa. Publiora memadukan editor ahli sesuai bidang keilmuan dengan proses kualitas terstruktur yang mencakup bahasa, argumentasi ilmiah, format jurnal, hingga dukungan submisi — secara menyeluruh.",
+    q: "Apa yang membedakan Terindeks dari jasa editing biasa?",
+    a: "Proofreading biasa hanya memeriksa tata bahasa. Terindeks mendampingi peneliti secara menyeluruh — mulai dari rekomendasi jurnal Sinta atau Scopus yang sesuai bidang, penyuntingan bahasa dan argumentasi ilmiah, pemformatan sesuai template jurnal, hingga pendampingan submisi dan respons reviewer.",
+  },
+  {
+    q: "Apa itu Sinta dan Scopus, dan bagaimana Terindeks membantu memilihnya?",
+    a: "Sinta (Science and Technology Index) adalah sistem akreditasi jurnal ilmiah nasional dari Kemdikbudristek, sedangkan Scopus adalah basis data indeksasi jurnal internasional. Tim kami membantu memetakan bidang risetmu ke jurnal Sinta (S1–S6) atau Scopus (Q1–Q4) yang paling relevan dan realistis dari sisi peluang penerimaan.",
   },
   {
     q: "Siapa yang akan menyunting manuskrip saya?",
-    a: "Setiap manuskrip dicocokkan dengan editor yang memiliki keahlian sesuai bidangnya, banyak di antaranya adalah mantan editor jurnal atau reviewer Scopus aktif di bidang tersebut.",
+    a: "Setiap manuskrip dicocokkan dengan editor yang memiliki keahlian sesuai bidangnya, banyak di antaranya adalah mantan editor jurnal terakreditasi Sinta atau reviewer aktif jurnal terindeks Scopus.",
   },
   {
-    q: "Berapa lama proses penyuntingan?",
-    a: "Waktu pengerjaan tergantung panjang manuskrip dan paket layanan, umumnya mulai dari 3 hari kerja untuk editing standar, dengan opsi percepatan tersedia.",
+    q: "Berapa lama proses penyuntingan dan submisi?",
+    a: "Waktu penyuntingan tergantung panjang manuskrip dan paket layanan, umumnya mulai dari 3 hari kerja, dengan opsi percepatan tersedia. Lama proses review di jurnal tujuan sendiri berada di luar kendali kami dan bervariasi antar jurnal.",
   },
   {
     q: "Apakah riset saya dijaga kerahasiaannya?",
@@ -119,16 +166,23 @@ export const FAQ_ITEMS = [
     q: "Apakah semua bidang riset didukung?",
     a: "Kami mencakup 42 bidang riset mulai dari kedokteran, teknik, bisnis, ilmu komputer, ilmu alam, dan lainnya — masing-masing dicocokkan dengan editor spesialis.",
   },
+  {
+    q: "Apakah Terindeks menjamin manuskrip saya diterima?",
+    a: "Tidak. Keputusan akhir selalu ada di tangan editor dan reviewer jurnal, dan kami tidak bekerja sama dengan jurnal predator atau menawarkan jalan pintas. Yang kami jamin adalah manuskrip yang lebih kuat secara bahasa, struktur, dan kesesuaian dengan jurnal Sinta atau Scopus yang kamu tuju, serta pendampingan yang jujur di setiap tahap.",
+  },
+  {
+    q: "Bagaimana skema pembayarannya?",
+    a: "Pembayaran dilakukan bertahap: 30% di awal untuk memulai penyuntingan, 30% saat manuskrip disubmit ke jurnal tujuan, dan 40% sisanya setelah manuskrip dinyatakan diterima (accepted). Biaya publikasi jurnal (APC), jika ada, dibayarkan terpisah langsung ke jurnal.",
+  },
+  {
+    q: "Apa perbedaan revisi minor dan major, dan apakah keduanya termasuk dalam layanan?",
+    a: "Revisi minor umumnya berupa perbaikan bahasa, format, atau klarifikasi kecil, sementara revisi major melibatkan perubahan substansial pada metodologi atau analisis. Tim kami mendampingi penyusunan respons untuk kedua jenis revisi; untuk revisi major yang memerlukan pengumpulan data tambahan, kami membantu menyusun strategi respons namun pekerjaan riset tambahan tetap menjadi tanggung jawab penulis.",
+  },
+  {
+    q: "Dokumen apa saja yang perlu saya siapkan?",
+    a: "Minimal draf manuskrip lengkap (dalam format apa pun) dan informasi bidang risetmu. Untuk submisi, umumnya juga dibutuhkan halaman judul, abstrak, kata kunci, dan daftar penulis beserta afiliasinya — tim kami akan memberi tahu detail dokumen yang disyaratkan jurnal tujuan begitu jurnal dipilih.",
+  },
 ];
-
-export const ANALYZER_RESULT = {
-  wordCount: "6.842 kata",
-  estimatedDelivery: "4 hari kerja",
-  recommendedEditor: "Dr. Farah Al-Sayed, PhD (Teknik Biomedis)",
-  journalDifficulty: "Tinggi — target jurnal Q1 terindeks Scopus",
-  publicationReadiness: 72,
-  estimatedPrice: "Penawaran khusus setelah ditinjau editor",
-};
 
 // Contoh manuskrip berikut sengaja tetap dalam bahasa Inggris karena
 // mendemonstrasikan penyuntingan naskah akademik berbahasa Inggris untuk jurnal internasional.

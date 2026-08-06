@@ -42,6 +42,9 @@ export function PricingPreview() {
                 <p className={clsx("mt-1 text-2xl font-bold", !tier.highlighted && "text-text")}>
                   {tier.priceDetail}
                 </p>
+                <p className={clsx("mt-1 text-xs", tier.highlighted ? "text-white/70" : "text-muted")}>
+                  {tier.priceNote}
+                </p>
               </div>
 
               <ul className="mt-6 flex flex-1 flex-col gap-3">

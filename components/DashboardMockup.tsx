@@ -32,8 +32,8 @@ export function DashboardMockup() {
           <p className="mt-1 text-lg font-bold text-text">6.842</p>
         </div>
         <div className="rounded-2xl bg-surface p-4">
-          <p className="text-xs text-muted">Layanan yang Disarankan</p>
-          <p className="mt-1 text-sm font-semibold text-text">Scientific Editing</p>
+          <p className="text-xs text-muted">Target Jurnal</p>
+          <p className="mt-1 text-sm font-semibold text-text">Sinta 2 & Scopus Q2</p>
         </div>
         <div className="rounded-2xl bg-surface p-4">
           <div className="flex items-center gap-1.5 text-xs text-muted">
@@ -68,7 +68,7 @@ export function DashboardMockup() {
 
       <div className="mt-4 flex items-center gap-2 text-xs text-success">
         <CheckCircle2 className="h-4 w-4" />
-        Dicocokkan dengan editor ahli target jurnal Q1 terindeks Scopus
+        Dicocokkan dengan editor ahli untuk jurnal Sinta 2 & Scopus Q2
       </div>
     </motion.div>
   );

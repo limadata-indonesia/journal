@@ -3,9 +3,9 @@ import { Mail } from "lucide-react";
 import { Button } from "./ui/Button";
 
 const COLUMNS = [
-  { title: "Produk", links: ["Academic Editing", "Scientific Editing", "Publication Concierge"] },
-  { title: "Sumber Daya", links: ["Contoh Editing", "Jaringan Editor", "Panduan Riset"] },
-  { title: "Harga", links: ["Academic Editing", "Scientific Editing", "Enterprise"] },
+  { title: "Produk", links: ["Sinta Ready", "Scopus Ready", "Pendampingan Penuh"] },
+  { title: "Sumber Daya", links: ["Contoh Editing", "Jaringan Editor", "Panduan Publikasi"] },
+  { title: "Harga", links: ["Sinta Ready", "Scopus Ready", "Enterprise"] },
   { title: "Perusahaan", links: ["Karier", "Privasi", "Ketentuan", "Kontak"] },
 ];
 
@@ -15,9 +15,9 @@ export function Footer() {
       <div className="mx-auto max-w-(--container-content) px-6 py-16 lg:px-10">
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-6">
           <div className="col-span-2">
-            <span className="text-xl font-bold tracking-tight text-primary">Publiora</span>
+            <span className="text-xl font-bold tracking-tight text-primary">Terindeks</span>
             <p className="mt-3 max-w-xs text-sm text-muted">
-              Editing akademik profesional untuk jurnal bereputasi tinggi, dipercaya oleh peneliti di seluruh dunia.
+              Pendampingan publikasi ilmiah dari naskah hingga terbit di jurnal terakreditasi Sinta dan terindeks Scopus, dipercaya peneliti di seluruh Indonesia.
             </p>
             <div className="mt-5">
               <p className="text-sm font-semibold text-text">Newsletter</p>
@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted sm:flex-row">
-          <p>© 2026 Publiora. Semua hak dilindungi.</p>
+          <p>© 2026 Terindeks. Semua hak dilindungi.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-text">LinkedIn</Link>
             <Link href="#" className="hover:text-text">X</Link>

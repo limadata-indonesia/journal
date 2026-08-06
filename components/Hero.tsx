@@ -28,7 +28,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-3 text-2xl font-semibold text-text/80 lg:text-3xl"
           >
-            Editing Akademik Profesional untuk Jurnal Bereputasi Tinggi.
+            Pendampingan Publikasi Ilmiah untuk Jurnal Terakreditasi Sinta & Terindeks Scopus.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -36,9 +36,9 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 max-w-lg text-lg text-muted"
           >
-            Dari editing bahasa hingga dukungan submisi jurnal, editor ahli kami membantu
-            peneliti memperjelas tulisan, memperkuat manuskrip, dan meningkatkan kesiapan
-            untuk dipublikasikan.
+            Dari pemilihan jurnal yang sesuai bidang risetmu, penyempurnaan bahasa dan
+            struktur, hingga pendampingan submisi dan respons reviewer — kami membantu
+            peneliti Indonesia menembus jurnal Sinta dan Scopus tanpa jalan pintas.
           </motion.p>
 
           <motion.div
@@ -51,7 +51,7 @@ export function Hero() {
               <Upload className="h-4 w-4" /> Unggah Manuskripmu
             </Button>
             <Button size="lg" variant="outline">
-              <FileSearch className="h-4 w-4" /> Lihat Contoh Editing
+              <FileSearch className="h-4 w-4" /> Cek Rekomendasi Jurnal
             </Button>
           </motion.div>
         </div>

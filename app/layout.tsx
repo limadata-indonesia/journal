@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Publiora — Terbitkan dengan Percaya Diri",
+  title: "Terindeks — Terbitkan dengan Percaya Diri",
   description:
-    "Editing akademik profesional untuk jurnal bereputasi tinggi. Dari editing bahasa hingga dukungan submisi jurnal, Publiora membantu peneliti memperkuat manuskrip dan meningkatkan kesiapan publikasi.",
+    "Pendampingan publikasi ilmiah untuk jurnal terakreditasi Sinta dan terindeks Scopus. Dari rekomendasi jurnal, editing bahasa, hingga pendampingan submisi dan respons reviewer, Terindeks membantu peneliti Indonesia menerbitkan manuskrip di jurnal yang tepat.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
