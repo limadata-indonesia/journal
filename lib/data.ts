@@ -1,5 +1,7 @@
-// Ilustratif — belum terhubung ke API SINTA/Scopus resmi (lihat catatan tim
-// soal akses API). Ganti dengan data riil begitu integrasi tersedia.
+// Jurnal riil, diverifikasi manual (nama, situs, status Sinta, dan cover
+// dicek langsung ke situs OJS masing-masing jurnal per 2026-08-07). Bukan
+// pengganti API SINTA/Scopus resmi (lihat catatan tim soal akses API) --
+// tetap perlu direfresh berkala karena akreditasi/URL bisa berubah.
 export const JOURNAL_FIELDS = [
   "Kedokteran & Kesehatan",
   "Teknik & Rekayasa",
@@ -19,67 +21,55 @@ export type JournalField = (typeof JOURNAL_FIELDS)[number];
 
 export const JOURNAL_RECOMMENDATIONS: Record<
   JournalField,
-  { name: string; type: "Sinta" | "Scopus"; tier: string; focus: string }[]
+  { name: string; type: "Sinta" | "Scopus"; tier: string; focus: string; url: string; cover: string | null }[]
 > = {
   "Kedokteran & Kesehatan": [
-    { name: "Jurnal Kedokteran Indonesia", type: "Sinta", tier: "S1", focus: "Kedokteran klinis & kesehatan masyarakat" },
-    { name: "Indonesian Journal of Medicine", type: "Scopus", tier: "Q3", focus: "Penelitian medis & farmakologi" },
-    { name: "Jurnal Ilmu Kesehatan Masyarakat", type: "Sinta", tier: "S2", focus: "Epidemiologi & kebijakan kesehatan" },
+    { name: "JKKI: Jurnal Kedokteran dan Kesehatan Indonesia", type: "Sinta", tier: "S1", focus: "Ilmu biomedis, kedokteran klinis, kesehatan masyarakat, dan pendidikan ilmu kedokteran.", url: "https://journal.uii.ac.id/JKKI", cover: "https://journal.uii.ac.id/public/journals/26/journalThumbnail_en_US.png" },
+    { name: "KEMAS: Jurnal Kesehatan Masyarakat", type: "Sinta", tier: "S2", focus: "Epidemiologi, kebijakan kesehatan, gizi kesehatan masyarakat, kesehatan lingkungan dan kerja.", url: "https://journal.unnes.ac.id/journals/kemas", cover: "https://journal.unnes.ac.id/journals/public/journals/26/homepageImage_en.png" },
   ],
   "Teknik & Rekayasa": [
-    { name: "Jurnal Teknik Mesin & Industri", type: "Sinta", tier: "S2", focus: "Rekayasa mesin & manufaktur" },
-    { name: "International Journal of Engineering", type: "Scopus", tier: "Q2", focus: "Teknik sipil & struktur" },
-    { name: "Jurnal Rekayasa Elektro", type: "Sinta", tier: "S3", focus: "Sistem kendali & elektronika" },
+    { name: "ROTASI", type: "Sinta", tier: "S3", focus: "Penelitian ilmiah bidang teknik mesin.", url: "https://ejournal.undip.ac.id/index.php/rotasi", cover: null },
+    { name: "JNTETI: Jurnal Nasional Teknik Elektro dan Teknologi Informasi", type: "Sinta", tier: "S2", focus: "Teknik elektro, sistem tenaga, sinyal & elektronika, sistem komunikasi.", url: "https://jurnal.ugm.ac.id/v3/JNTETI", cover: "https://jurnal.ugm.ac.id/v3/public/site/images/risanuri/halaman_depan_web_edit3.jpg" },
   ],
   "Ekonomi, Manajemen & Akuntansi": [
-    { name: "Jurnal Ekonomi & Bisnis Indonesia", type: "Sinta", tier: "S1", focus: "Ekonomi makro & kebijakan publik" },
-    { name: "International Journal of Business & Management", type: "Scopus", tier: "Q3", focus: "Manajemen strategis & kewirausahaan" },
-    { name: "Jurnal Akuntansi & Keuangan", type: "Sinta", tier: "S2", focus: "Akuntansi & audit" },
+    { name: "JAEMB: Jurnal Akuntansi, Ekonomi dan Manajemen Bisnis", type: "Sinta", tier: "S3", focus: "Penelitian akuntansi, ekonomi, dan manajemen bisnis.", url: "https://jurnal.polibatam.ac.id/index.php/JAEMB", cover: "https://jurnal.polibatam.ac.id/public/journals/12/cover_issue_329_en_US.jpg" },
+    { name: "Jurnal Dinamika Akuntansi", type: "Sinta", tier: "S2", focus: "Akuntansi keuangan, manajemen biaya, perpajakan, audit, sistem informasi akuntansi.", url: "https://journal.unnes.ac.id/journals/jda", cover: "https://journal.unnes.ac.id/nju/public/site/images/sutikno/Jurnal_Dinamika_Akuntansi_(1)_0011.jpg" },
   ],
   "Ilmu Komputer & Teknologi Informasi": [
-    { name: "Jurnal Ilmu Komputer & Informasi", type: "Sinta", tier: "S1", focus: "Kecerdasan buatan & data mining" },
-    { name: "International Journal of Computing", type: "Scopus", tier: "Q2", focus: "Rekayasa perangkat lunak & jaringan" },
-    { name: "Jurnal Sistem Informasi", type: "Sinta", tier: "S3", focus: "Sistem informasi & keamanan siber" },
+    { name: "Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)", type: "Sinta", tier: "S2", focus: "Rekayasa perangkat lunak, keamanan informasi, data mining, AI, jaringan komputer.", url: "https://resti.org/home/", cover: null },
+    { name: "IJCCS: Indonesian Journal of Computing and Cybernetics Systems", type: "Sinta", tier: "S2", focus: "Kecerdasan komputasi, jaringan syaraf tiruan, fuzzy logic, algoritma genetika.", url: "https://journal.ugm.ac.id/ijccs", cover: "https://journal.ugm.ac.id/public/journals/2/cover_issue_604_en_US.png" },
   ],
   "Pendidikan": [
-    { name: "Jurnal Pendidikan Indonesia", type: "Sinta", tier: "S1", focus: "Kurikulum & pembelajaran" },
-    { name: "International Journal of Education", type: "Scopus", tier: "Q3", focus: "Pendidikan tinggi & kebijakan" },
-    { name: "Jurnal Pendidikan Dasar & Menengah", type: "Sinta", tier: "S2", focus: "Metode pengajaran & evaluasi" },
+    { name: "Cakrawala Pendidikan", type: "Sinta", tier: "S1", focus: "Penelitian empiris berkualitas tinggi di bidang pendidikan.", url: "https://journal.uny.ac.id/index.php/cp", cover: "https://journal.uny.ac.id/public/journals/3/homepageImage_en_US.png" },
+    { name: "PENDASI: Jurnal Pendidikan Dasar Indonesia", type: "Sinta", tier: "S4", focus: "Penelitian dan pengabdian masyarakat di bidang pendidikan Sekolah Dasar.", url: "https://ejournal2.undiksha.ac.id/index.php/jurnal_pendas", cover: "https://ejournal2.undiksha.ac.id/public/site/images/ernamuliastrini/Pendasi4.jpg" },
   ],
   "Hukum": [
-    { name: "Jurnal Hukum & Pembangunan", type: "Sinta", tier: "S1", focus: "Hukum tata negara & perdata" },
-    { name: "Indonesian Journal of Law", type: "Scopus", tier: "Q4", focus: "Hukum internasional & HAM" },
-    { name: "Jurnal Ilmu Hukum", type: "Sinta", tier: "S2", focus: "Hukum pidana & acara" },
+    { name: "Mimbar Hukum", type: "Sinta", tier: "S2", focus: "Dialektika asas, teori, dan filsafat hukum.", url: "https://jurnal.ugm.ac.id/v3/MH", cover: "https://jurnal.ugm.ac.id/v3/public/journals/62/pageHeaderLogoImage_en_US.jpg" },
+    { name: "Kertha Semaya: Journal Ilmu Hukum", type: "Sinta", tier: "S3", focus: "Ilmu hukum umum, diterbitkan Fakultas Hukum Universitas Udayana.", url: "https://ojs.unud.ac.id/index.php/kerthasemaya", cover: "https://ojs.unud.ac.id/public/journals/92/homepageImage_en_US.jpg" },
   ],
   "Pertanian & Lingkungan": [
-    { name: "Jurnal Ilmu Pertanian Indonesia", type: "Sinta", tier: "S1", focus: "Agronomi & bioteknologi tanaman" },
-    { name: "International Journal of Environmental Science", type: "Scopus", tier: "Q2", focus: "Ekologi & pengelolaan lingkungan" },
-    { name: "Jurnal Sumber Daya Alam & Lingkungan", type: "Sinta", tier: "S3", focus: "Konservasi & keberlanjutan" },
+    { name: "JIPI: Jurnal Ilmu Pertanian Indonesia", type: "Sinta", tier: "S2", focus: "Agronomi, ilmu tanah, teknologi pangan, peternakan, perikanan, kehutanan, sosial ekonomi pertanian.", url: "https://journal.ipb.ac.id/index.php/JIPI", cover: "https://journal.ipb.ac.id/public/journals/71/cover_issue_4071_en.png" },
+    { name: "Jurnal Tanah dan Iklim", type: "Sinta", tier: "S2", focus: "Sumberdaya lahan pertanian, ilmu tanah, iklim pertanian, hidrologi pertanian.", url: "https://epublikasi.pertanian.go.id/berkala/jti", cover: "https://epublikasi.pertanian.go.id/berkala/public/journals/18/pageHeaderLogoImage_en_US.jpg" },
   ],
   "Ilmu Sosial & Politik": [
-    { name: "Jurnal Ilmu Sosial & Politik", type: "Sinta", tier: "S2", focus: "Kebijakan publik & tata kelola" },
-    { name: "International Journal of Social Science", type: "Scopus", tier: "Q3", focus: "Sosiologi & antropologi" },
-    { name: "Jurnal Hubungan Internasional", type: "Sinta", tier: "S3", focus: "Diplomasi & kerja sama internasional" },
+    { name: "JSP: Jurnal Ilmu Sosial dan Ilmu Politik", type: "Sinta", tier: "S1", focus: "Isu sosial-politik kontemporer (gender, masyarakat sipil, kebijakan publik, demokrasi).", url: "https://journal.ugm.ac.id/jsp", cover: "https://journal.ugm.ac.id/public/journals/84/homeHeaderTitleImage_en_US.png" },
+    { name: "POLITIKA: Jurnal Ilmu Politik", type: "Sinta", tier: "S2", focus: "Ilmu politik, tata kelola, dan kebijakan publik Indonesia/Asia.", url: "https://ejournal.undip.ac.id/index.php/politika", cover: null },
   ],
   "Psikologi": [
-    { name: "Jurnal Psikologi Indonesia", type: "Sinta", tier: "S1", focus: "Psikologi klinis & perkembangan" },
-    { name: "International Journal of Psychology", type: "Scopus", tier: "Q3", focus: "Psikologi kognitif & sosial" },
-    { name: "Jurnal Psikologi Industri & Organisasi", type: "Sinta", tier: "S2", focus: "Psikologi kerja & organisasi" },
+    { name: "Psikologika: Jurnal Pemikiran dan Penelitian Psikologi", type: "Sinta", tier: "S2", focus: "Psikologi klinis, pendidikan, perkembangan, industri-organisasi, sosial, dan Islam.", url: "https://journal.uii.ac.id/Psikologika", cover: "https://journal.uii.ac.id/public/journals/18/journalThumbnail_en_US.jpg" },
+    { name: "ANIMA Indonesian Psychological Journal", type: "Sinta", tier: "S2", focus: "Riset psikologi Indonesia, penekanan pada pendidikan, kesehatan, dan organisasi.", url: "https://journal.ubaya.ac.id/index.php/jpa", cover: null },
   ],
   "Sains & Matematika": [
-    { name: "Jurnal Sains & Matematika", type: "Sinta", tier: "S2", focus: "Matematika terapan & statistika" },
-    { name: "International Journal of Applied Science", type: "Scopus", tier: "Q2", focus: "Fisika & kimia terapan" },
-    { name: "Jurnal Biologi & Biosains", type: "Sinta", tier: "S3", focus: "Biologi molekuler & bioteknologi" },
+    { name: "MIMS: Majalah Ilmiah Matematika dan Statistika", type: "Sinta", tier: "S3", focus: "Matematika dan statistika.", url: "https://mims.journal.unej.ac.id/", cover: null },
+    { name: "JKSA: Jurnal Kimia Sains dan Aplikasi", type: "Sinta", tier: "S2", focus: "Penelitian dan review bidang kimia.", url: "https://ejournal.undip.ac.id/index.php/ksa", cover: "https://ejournal.undip.ac.id/public/site/images/adidarmawan/JKSA_cover_icon2.png" },
   ],
   "Sastra, Bahasa & Budaya": [
-    { name: "Jurnal Bahasa & Sastra Indonesia", type: "Sinta", tier: "S2", focus: "Linguistik & kajian sastra" },
-    { name: "International Journal of Language Studies", type: "Scopus", tier: "Q4", focus: "Linguistik terapan & penerjemahan" },
-    { name: "Jurnal Kajian Budaya", type: "Sinta", tier: "S3", focus: "Antropologi budaya & warisan" },
+    { name: "Ilmu Budaya: Jurnal Bahasa, Sastra, Seni, dan Budaya", type: "Sinta", tier: "S4", focus: "Budaya, sastra, bahasa, dan seni.", url: "https://e-journals.unmul.ac.id/index.php/jbssb", cover: "https://e-journals.unmul.ac.id/public/journals/40/homeHeaderTitleImage_en_US.jpg" },
+    { name: "LITERA", type: "Sinta", tier: "S2", focus: "Linguistik, sastra, dan pengajarannya.", url: "https://journal.uny.ac.id/index.php/litera", cover: "https://journal.uny.ac.id/public/journals/8/pageHeaderLogoImage_en_US.png" },
   ],
   "Energi, Migas & Pertambangan": [
-    { name: "Jurnal Energi & Migas Indonesia", type: "Sinta", tier: "S2", focus: "Eksplorasi & produksi migas" },
-    { name: "International Journal of Energy Research", type: "Scopus", tier: "Q2", focus: "Energi terbarukan & transisi energi" },
-    { name: "Jurnal Pertambangan & Geologi", type: "Sinta", tier: "S3", focus: "Geologi & teknik pertambangan" },
+    { name: "Jurnal Nasional Pengelolaan Energi Migas", type: "Sinta", tier: "S4", focus: "Manajemen energi, khususnya sektor migas.", url: "https://journal.esdm.go.id/", cover: "https://journal.esdm.go.id/public/journals/6/journalThumbnail_en.png" },
+    { name: "JTP: Jurnal Teknologi Pertambangan", type: "Sinta", tier: "S5", focus: "Eksplorasi, eksploitasi tambang, pengolahan minerba, reklamasi pasca tambang.", url: "https://jurnal.upnyk.ac.id/index.php/jtp", cover: "https://jurnal.upnyk.ac.id/public/journals/32/cover_issue_948_en_US.png" },
   ],
 };
 

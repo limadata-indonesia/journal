@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, ArrowRight } from "lucide-react";
+import { BookOpen, ArrowRight, ExternalLink } from "lucide-react";
 import clsx from "clsx";
 import { JOURNAL_FIELDS, JOURNAL_RECOMMENDATIONS, type JournalField } from "@/lib/data";
 import { Card } from "@/components/ui/Card";
@@ -42,31 +42,50 @@ export function RecommendationTool() {
             className="mt-10"
           >
             <p className="text-sm font-semibold text-muted">
-              Contoh rekomendasi jurnal untuk bidang &ldquo;{selected}&rdquo;
+              Contoh jurnal untuk bidang &ldquo;{selected}&rdquo; — klik untuk membuka situs resmi jurnal
             </p>
-            <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
               {JOURNAL_RECOMMENDATIONS[selected].map((j) => (
-                <Card key={j.name} className="p-6">
-                  <div className="flex items-start justify-between gap-2">
-                    <BookOpen className="h-5 w-5 shrink-0 text-accent" />
-                    <span
-                      className={clsx(
-                        "rounded-full px-2.5 py-1 text-[11px] font-semibold",
-                        j.type === "Sinta" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"
+                <a key={j.name} href={j.url} target="_blank" rel="noopener noreferrer" className="group block">
+                  <Card className="flex h-full flex-row overflow-hidden p-0">
+                    <div className="relative h-auto w-28 shrink-0 overflow-hidden bg-surface sm:w-36">
+                      {j.cover ? (
+                        // eslint-disable-next-line @next/next/no-img-element -- external OJS covers across many domains, not worth remotePatterns config for a small illustrative set
+                        <img
+                          src={j.cover}
+                          alt=""
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary to-secondary">
+                          <BookOpen className="h-8 w-8 text-white/60" />
+                        </div>
                       )}
-                    >
-                      {j.type} {j.tier}
-                    </span>
-                  </div>
-                  <p className="mt-4 font-heading text-base font-bold text-text">{j.name}</p>
-                  <p className="mt-1 text-sm text-muted">{j.focus}</p>
-                </Card>
+                    </div>
+                    <div className="flex flex-1 flex-col p-5">
+                      <div className="flex items-start justify-between gap-2">
+                        <span
+                          className={clsx(
+                            "rounded-full px-2.5 py-1 text-[11px] font-semibold",
+                            j.type === "Sinta" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"
+                          )}
+                        >
+                          {j.type} {j.tier}
+                        </span>
+                        <ExternalLink className="h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-accent" />
+                      </div>
+                      <p className="font-heading mt-3 text-base font-bold text-text">{j.name}</p>
+                      <p className="mt-1 text-sm text-muted">{j.focus}</p>
+                    </div>
+                  </Card>
+                </a>
               ))}
             </div>
 
             <div className="mt-8 flex flex-col items-start gap-3 rounded border border-border bg-surface p-6 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-muted">
-                Ini contoh ilustratif. Untuk rekomendasi yang lebih spesifik sesuai manuskripmu, konsultasikan langsung dengan tim editor kami.
+                Ini contoh jurnal nyata di bidang tersebut, bukan rekomendasi yang dipersonalisasi. Untuk rekomendasi yang sesuai manuskrip dan target akreditasimu, konsultasikan langsung dengan tim editor kami.
               </p>
               <LinkButton href="/#pricing" className="shrink-0">
                 Konsultasikan Manuskripmu <ArrowRight className="h-4 w-4" />
