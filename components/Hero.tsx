@@ -45,7 +45,7 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-(--container-content) px-6 py-20 lg:px-10 lg:py-28">
-        <div className="max-w-2xl">
+        <div className="max-w-4xl">
           {/* Always-present, single H1 for SEO — stays as the primary headline
               regardless of which slide is currently showing. */}
           <h1 className="sr-only">{HERO_SLIDES[0].headline}</h1>
@@ -60,9 +60,8 @@ export function Hero() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <p className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white lg:text-6xl">
-                  {slide.headlineLines[0]}
-                  <br />
-                  {slide.headlineLines[1]}
+                  <span className="block lg:whitespace-nowrap">{slide.headlineLines[0]}</span>
+                  <span className="block lg:whitespace-nowrap">{slide.headlineLines[1]}</span>
                 </p>
                 <p className="font-heading mt-3 text-2xl font-semibold text-white/90 lg:text-3xl">{slide.subheading}</p>
                 <p className="mt-6 max-w-lg text-lg text-white/70">{slide.description}</p>
