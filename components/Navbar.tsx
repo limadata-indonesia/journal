@@ -8,6 +8,7 @@ import { Button } from "./ui/Button";
 const NAV_LINKS = [
   { label: "Solusi", href: "#services" },
   { label: "Layanan", href: "#services" },
+  { label: "Rekomendasi Jurnal", href: "/rekomendasi-jurnal" },
   { label: "Harga", href: "#pricing" },
   { label: "Sumber Daya", href: "#faq" },
   { label: "Tentang Kami", href: "#why-us" },

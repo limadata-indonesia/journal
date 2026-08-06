@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import Link, { LinkProps } from "next/link";
 import clsx from "clsx";
 
 type Variant = "primary" | "secondary" | "outline" | "ghost";
@@ -17,19 +18,31 @@ const sizes: Record<Size, string> = {
   lg: "h-14 px-8 text-base",
 };
 
+const buttonClasses = (variant: Variant, size: Size, className?: string) =>
+  clsx(
+    "inline-flex items-center justify-center gap-2 rounded font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50",
+    variants[variant],
+    sizes[size],
+    className
+  );
+
+type ButtonOwnProps = { variant?: Variant; size?: Size };
+
 export const Button = forwardRef<
   HTMLButtonElement,
-  ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant; size?: Size }
+  ButtonHTMLAttributes<HTMLButtonElement> & ButtonOwnProps
 >(({ className, variant = "primary", size = "md", ...props }, ref) => (
-  <button
-    ref={ref}
-    className={clsx(
-      "inline-flex items-center justify-center gap-2 rounded font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50",
-      variants[variant],
-      sizes[size],
-      className
-    )}
-    {...props}
-  />
+  <button ref={ref} className={buttonClasses(variant, size, className)} {...props} />
 ));
 Button.displayName = "Button";
+
+// Same visual styling as Button, but renders a real <Link> for navigation
+// (an <a> is the correct element for links; Button stays a plain <button>).
+export function LinkButton({
+  className,
+  variant = "primary",
+  size = "md",
+  ...props
+}: LinkProps & ButtonOwnProps & { className?: string; children?: ReactNode }) {
+  return <Link className={buttonClasses(variant, size, className)} {...props} />;
+}

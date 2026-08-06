@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Upload, FileSearch } from "lucide-react";
-import { Button } from "./ui/Button";
+import { Button, LinkButton } from "./ui/Button";
 import { HERO_SLIDES } from "@/lib/data";
 
 const AUTO_ADVANCE_MS = 6000;
@@ -77,9 +77,9 @@ export function Hero() {
             <Button size="lg">
               <Upload className="h-4 w-4" /> Unggah Manuskripmu
             </Button>
-            <Button size="lg" variant="outline">
+            <LinkButton href="/rekomendasi-jurnal" size="lg" variant="outline">
               <FileSearch className="h-4 w-4" /> Cek Rekomendasi Jurnal
-            </Button>
+            </LinkButton>
           </motion.div>
 
           <div className="mt-10 flex items-center gap-2">

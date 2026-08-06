@@ -1,3 +1,88 @@
+// Ilustratif — belum terhubung ke API SINTA/Scopus resmi (lihat catatan tim
+// soal akses API). Ganti dengan data riil begitu integrasi tersedia.
+export const JOURNAL_FIELDS = [
+  "Kedokteran & Kesehatan",
+  "Teknik & Rekayasa",
+  "Ekonomi, Manajemen & Akuntansi",
+  "Ilmu Komputer & Teknologi Informasi",
+  "Pendidikan",
+  "Hukum",
+  "Pertanian & Lingkungan",
+  "Ilmu Sosial & Politik",
+  "Psikologi",
+  "Sains & Matematika",
+  "Sastra, Bahasa & Budaya",
+  "Energi, Migas & Pertambangan",
+] as const;
+
+export type JournalField = (typeof JOURNAL_FIELDS)[number];
+
+export const JOURNAL_RECOMMENDATIONS: Record<
+  JournalField,
+  { name: string; type: "Sinta" | "Scopus"; tier: string; focus: string }[]
+> = {
+  "Kedokteran & Kesehatan": [
+    { name: "Jurnal Kedokteran Indonesia", type: "Sinta", tier: "S1", focus: "Kedokteran klinis & kesehatan masyarakat" },
+    { name: "Indonesian Journal of Medicine", type: "Scopus", tier: "Q3", focus: "Penelitian medis & farmakologi" },
+    { name: "Jurnal Ilmu Kesehatan Masyarakat", type: "Sinta", tier: "S2", focus: "Epidemiologi & kebijakan kesehatan" },
+  ],
+  "Teknik & Rekayasa": [
+    { name: "Jurnal Teknik Mesin & Industri", type: "Sinta", tier: "S2", focus: "Rekayasa mesin & manufaktur" },
+    { name: "International Journal of Engineering", type: "Scopus", tier: "Q2", focus: "Teknik sipil & struktur" },
+    { name: "Jurnal Rekayasa Elektro", type: "Sinta", tier: "S3", focus: "Sistem kendali & elektronika" },
+  ],
+  "Ekonomi, Manajemen & Akuntansi": [
+    { name: "Jurnal Ekonomi & Bisnis Indonesia", type: "Sinta", tier: "S1", focus: "Ekonomi makro & kebijakan publik" },
+    { name: "International Journal of Business & Management", type: "Scopus", tier: "Q3", focus: "Manajemen strategis & kewirausahaan" },
+    { name: "Jurnal Akuntansi & Keuangan", type: "Sinta", tier: "S2", focus: "Akuntansi & audit" },
+  ],
+  "Ilmu Komputer & Teknologi Informasi": [
+    { name: "Jurnal Ilmu Komputer & Informasi", type: "Sinta", tier: "S1", focus: "Kecerdasan buatan & data mining" },
+    { name: "International Journal of Computing", type: "Scopus", tier: "Q2", focus: "Rekayasa perangkat lunak & jaringan" },
+    { name: "Jurnal Sistem Informasi", type: "Sinta", tier: "S3", focus: "Sistem informasi & keamanan siber" },
+  ],
+  "Pendidikan": [
+    { name: "Jurnal Pendidikan Indonesia", type: "Sinta", tier: "S1", focus: "Kurikulum & pembelajaran" },
+    { name: "International Journal of Education", type: "Scopus", tier: "Q3", focus: "Pendidikan tinggi & kebijakan" },
+    { name: "Jurnal Pendidikan Dasar & Menengah", type: "Sinta", tier: "S2", focus: "Metode pengajaran & evaluasi" },
+  ],
+  "Hukum": [
+    { name: "Jurnal Hukum & Pembangunan", type: "Sinta", tier: "S1", focus: "Hukum tata negara & perdata" },
+    { name: "Indonesian Journal of Law", type: "Scopus", tier: "Q4", focus: "Hukum internasional & HAM" },
+    { name: "Jurnal Ilmu Hukum", type: "Sinta", tier: "S2", focus: "Hukum pidana & acara" },
+  ],
+  "Pertanian & Lingkungan": [
+    { name: "Jurnal Ilmu Pertanian Indonesia", type: "Sinta", tier: "S1", focus: "Agronomi & bioteknologi tanaman" },
+    { name: "International Journal of Environmental Science", type: "Scopus", tier: "Q2", focus: "Ekologi & pengelolaan lingkungan" },
+    { name: "Jurnal Sumber Daya Alam & Lingkungan", type: "Sinta", tier: "S3", focus: "Konservasi & keberlanjutan" },
+  ],
+  "Ilmu Sosial & Politik": [
+    { name: "Jurnal Ilmu Sosial & Politik", type: "Sinta", tier: "S2", focus: "Kebijakan publik & tata kelola" },
+    { name: "International Journal of Social Science", type: "Scopus", tier: "Q3", focus: "Sosiologi & antropologi" },
+    { name: "Jurnal Hubungan Internasional", type: "Sinta", tier: "S3", focus: "Diplomasi & kerja sama internasional" },
+  ],
+  "Psikologi": [
+    { name: "Jurnal Psikologi Indonesia", type: "Sinta", tier: "S1", focus: "Psikologi klinis & perkembangan" },
+    { name: "International Journal of Psychology", type: "Scopus", tier: "Q3", focus: "Psikologi kognitif & sosial" },
+    { name: "Jurnal Psikologi Industri & Organisasi", type: "Sinta", tier: "S2", focus: "Psikologi kerja & organisasi" },
+  ],
+  "Sains & Matematika": [
+    { name: "Jurnal Sains & Matematika", type: "Sinta", tier: "S2", focus: "Matematika terapan & statistika" },
+    { name: "International Journal of Applied Science", type: "Scopus", tier: "Q2", focus: "Fisika & kimia terapan" },
+    { name: "Jurnal Biologi & Biosains", type: "Sinta", tier: "S3", focus: "Biologi molekuler & bioteknologi" },
+  ],
+  "Sastra, Bahasa & Budaya": [
+    { name: "Jurnal Bahasa & Sastra Indonesia", type: "Sinta", tier: "S2", focus: "Linguistik & kajian sastra" },
+    { name: "International Journal of Language Studies", type: "Scopus", tier: "Q4", focus: "Linguistik terapan & penerjemahan" },
+    { name: "Jurnal Kajian Budaya", type: "Sinta", tier: "S3", focus: "Antropologi budaya & warisan" },
+  ],
+  "Energi, Migas & Pertambangan": [
+    { name: "Jurnal Energi & Migas Indonesia", type: "Sinta", tier: "S2", focus: "Eksplorasi & produksi migas" },
+    { name: "International Journal of Energy Research", type: "Scopus", tier: "Q2", focus: "Energi terbarukan & transisi energi" },
+    { name: "Jurnal Pertambangan & Geologi", type: "Sinta", tier: "S3", focus: "Geologi & teknik pertambangan" },
+  ],
+};
+
 // Slide pertama adalah headline utama (dirender sebagai satu-satunya <h1> di
 // DOM demi SEO) — teksnya tidak diubah. Slide berikutnya melengkapi pesan
 // utama dengan sudut pandang lain dari layanan yang sama.
