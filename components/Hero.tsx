@@ -77,7 +77,7 @@ export function Hero() {
             <Button size="lg">
               <Upload className="h-4 w-4" /> Unggah Manuskripmu
             </Button>
-            <LinkButton href="/rekomendasi-jurnal" size="lg" variant="outline">
+            <LinkButton href="#rekomendasi-jurnal" size="lg" variant="outline">
               <FileSearch className="h-4 w-4" /> Cek Rekomendasi Jurnal
             </LinkButton>
           </motion.div>

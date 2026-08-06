@@ -4,7 +4,7 @@ import { AlurLayanan } from "@/components/AlurLayanan";
 import { BeforeAfterEditor } from "@/components/BeforeAfterEditor";
 import { PricingPreview } from "@/components/PricingPreview";
 import { Testimonials } from "@/components/Testimonials";
-import { SampleManuscriptViewer } from "@/components/SampleManuscriptViewer";
+import { RekomendasiJurnalSection } from "@/components/RekomendasiJurnalSection";
 import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <AlurLayanan />
       <BeforeAfterEditor />
       <Testimonials />
-      <SampleManuscriptViewer />
+      <RekomendasiJurnalSection />
       <FAQ />
     </main>
   );
