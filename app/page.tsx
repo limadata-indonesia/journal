@@ -1,7 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Stats } from "@/components/Stats";
 import { AlurLayanan } from "@/components/AlurLayanan";
-import { BeforeAfterEditor } from "@/components/BeforeAfterEditor";
 import { PricingPreview } from "@/components/PricingPreview";
 import { Testimonials } from "@/components/Testimonials";
 import { RekomendasiJurnalSection } from "@/components/RekomendasiJurnalSection";
@@ -14,7 +13,6 @@ export default function Home() {
       <Stats />
       <PricingPreview />
       <AlurLayanan />
-      <BeforeAfterEditor />
       <Testimonials />
       <RekomendasiJurnalSection />
       <FAQ />

@@ -7,7 +7,7 @@ import { Card } from "./ui/Card";
 
 export function Testimonials() {
   return (
-    <section className="py-24">
+    <section className="bg-surface py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold text-primary lg:text-4xl">Testimoni Peneliti</h2>

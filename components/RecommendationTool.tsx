@@ -66,7 +66,7 @@ export function RecommendationTool() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-col items-start gap-3 rounded border border-border bg-background p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-8 flex flex-col items-start gap-3 rounded border border-border bg-surface p-6 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-muted">
                 Ini contoh jurnal nyata di bidang tersebut, bukan rekomendasi yang dipersonalisasi. Untuk rekomendasi yang sesuai manuskrip dan target akreditasimu, konsultasikan langsung dengan tim editor kami.
               </p>

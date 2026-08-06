@@ -288,12 +288,4 @@ export const FAQ_ITEMS = [
   },
 ];
 
-// Contoh manuskrip berikut sengaja tetap dalam bahasa Inggris karena
-// mendemonstrasikan penyuntingan naskah akademik berbahasa Inggris untuk jurnal internasional.
-export const BEFORE_AFTER = {
-  before:
-    "This study is investigate the effect of temperature on the growth of bacteria in controlled environment, and result show that higher temperature is increasing the growth rate significantly compare to lower temperature groups.",
-  after:
-    "This study investigates the effect of temperature on bacterial growth under controlled conditions. Results indicate that higher temperatures significantly increase growth rate compared to lower-temperature groups.",
-};
 
