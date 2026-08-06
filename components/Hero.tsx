@@ -60,7 +60,9 @@ export function Hero() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <p className="font-heading text-4xl font-bold leading-[1.1] tracking-tight text-white lg:text-6xl">
-                  {slide.headline}
+                  {slide.headlineLines[0]}
+                  <br />
+                  {slide.headlineLines[1]}
                 </p>
                 <p className="font-heading mt-3 text-2xl font-semibold text-white/90 lg:text-3xl">{slide.subheading}</p>
                 <p className="mt-6 max-w-lg text-lg text-white/70">{slide.description}</p>
