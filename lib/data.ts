@@ -366,3 +366,14 @@ export const SERVICES = [
     tone: "cyan",
   },
 ] as const;
+
+// Artikel blog yang direncanakan. Belum ada halaman artikel, jadi kartunya
+// ditampilkan sebagai "Segera hadir" (tidak dapat diklik) sampai kontennya siap.
+export const BLOG_POSTS = [
+  { category: "Panduan", title: "Sinta vs Scopus: Mana yang Tepat untuk Risetmu?", icon: "Scale" },
+  { category: "Etika Publikasi", title: "Ciri-Ciri Jurnal Predator dan Cara Menghindarinya", icon: "ShieldAlert" },
+  { category: "Revisi", title: "Cara Menyusun Respons Reviewer yang Persuasif", icon: "MessageSquareReply" },
+  { category: "Submisi", title: "Penyebab Umum Desk Reject dan Cara Mencegahnya", icon: "FileX" },
+  { category: "Penulisan", title: "Struktur IMRaD: Kerangka Artikel Ilmiah yang Disukai Editor", icon: "LayoutTemplate" },
+  { category: "Submisi", title: "Menulis Cover Letter yang Meyakinkan untuk Submisi Jurnal", icon: "Mail" },
+] as const;

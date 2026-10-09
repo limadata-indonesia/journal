@@ -5,6 +5,7 @@ const LINKS = [
   { label: "Layanan", href: "#services" },
   { label: "Harga", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
+  { label: "Blog", href: "#blog" },
 ];
 
 const FOOTER_BARS = [

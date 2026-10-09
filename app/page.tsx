@@ -6,6 +6,7 @@ import { PricingPreview } from "@/components/PricingPreview";
 import { AlurLayanan } from "@/components/AlurLayanan";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
+import { Blog } from "@/components/Blog";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <AlurLayanan />
       <Testimonials />
       <FAQ />
+      <Blog />
     </main>
   );
 }

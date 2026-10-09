@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: "Alur", href: "#alur" },
   { label: "Testimoni", href: "#testimoni" },
   { label: "FAQ", href: "#faq" },
+  { label: "Blog", href: "#blog" },
 ];
 
 export function Logo({ className }: { className?: string }) {
