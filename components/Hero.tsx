@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { LinkButton } from "./ui/Button";
 import { Orb } from "./ui/Decor";
+import { ShaderBackground } from "./ui/waves-shader";
 import { HERO_SLIDES } from "@/lib/data";
 
 const AUTO_ADVANCE_MS = 6000;
@@ -26,6 +27,12 @@ export function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+      {/* Animated waves shader, flipped upside down so the deep blue sits at the
+          top and it fades light toward the bottom. The section's CSS gradient
+          stays underneath as the fallback when WebGL is unavailable. */}
+      <ShaderBackground className="pointer-events-none absolute inset-0 -scale-y-100" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white" />
+
       {/* Wireframe globe (same artwork as Daily Meaning, recoloured white) on a
           soft blue glow, right side */}
       <div aria-hidden className="pointer-events-none absolute right-[-12%] top-20 hidden aspect-square w-[50%] max-w-[680px] lg:block xl:right-[-6%]">

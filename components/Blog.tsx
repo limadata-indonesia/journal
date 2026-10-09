@@ -1,9 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, FileX, LayoutTemplate, Mail, MessageSquareReply, Scale, ShieldAlert } from "lucide-react";
+import { CalendarDays, Clock, FileX, LayoutTemplate, Mail, MessageSquareReply, Scale, ShieldAlert } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/data";
 import { Eyebrow } from "./ui/Decor";
+
+// Fixed month names so server and browser render the same string.
+const MONTHS = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+const formatDate = (iso: string) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+};
 
 const ICONS = { Scale, ShieldAlert, MessageSquareReply, FileX, LayoutTemplate, Mail };
 
@@ -51,7 +58,11 @@ export function Blog() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="flex-1 text-[19px] font-medium leading-snug text-primary">{post.title}</h3>
+                  <p className="flex items-center gap-1.5 text-xs font-medium text-muted">
+                    <CalendarDays className="h-3.5 w-3.5 text-accent" />
+                    Jadwal terbit · <time dateTime={post.date}>{formatDate(post.date)}</time>
+                  </p>
+                  <h3 className="mt-3 flex-1 text-[19px] font-medium leading-snug text-primary">{post.title}</h3>
                   <p className="mt-6 flex items-center gap-2.5 text-sm font-semibold text-muted">
                     <span className="grid h-7 w-7 place-items-center rounded-full bg-surface text-accent">
                       <Clock className="h-3.5 w-3.5" />

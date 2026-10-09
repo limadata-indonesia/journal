@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { TESTIMONIALS } from "@/lib/data";
 import { LinkButton } from "./ui/Button";
@@ -55,8 +56,16 @@ export function Testimonials() {
           </div>
         </motion.div>
 
-        <div className="flex items-center bg-sky px-6 py-20 lg:mt-10 lg:px-24">
-          <div>
+        <div className="relative flex items-center overflow-hidden bg-sky px-6 py-20 lg:mt-10 lg:px-24">
+          {/* Corridor photo (Garvit Chaturvedi / Unsplash) with the panel's sky
+              blue fading in from the left so the text stays legible. */}
+          {/* Oversized frame so the corridor's vanishing point lands in the
+              visible right-hand part of the panel. */}
+          <div aria-hidden className="absolute left-[3%] top-1/2 aspect-[1196/1600] w-[160%] -translate-y-[47%]">
+            <Image src="/editor-corridor.jpg" alt="" fill sizes="(min-width: 1024px) 66vw, 160vw" className="object-cover" />
+          </div>
+          <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,#4db6ff_0%,#4db6ff_30%,rgba(77,182,255,0.85)_50%,rgba(77,182,255,0.25)_80%,rgba(77,182,255,0)_100%)]" />
+          <div className="relative">
             <h2 className="max-w-sm text-3xl font-medium leading-[1.2] text-primary lg:text-[42px]">
               Manfaatkan Keahlian Editor Kami.
             </h2>
