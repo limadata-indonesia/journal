@@ -3,7 +3,7 @@ import { Streaks } from "./ui/Decor";
 
 const LINKS = [
   { label: "Layanan", href: "#services" },
-  { label: "Harga", href: "#pricing" },
+  { label: "Paket", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
   { label: "Blog", href: "#blog" },
 ];

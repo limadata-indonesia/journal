@@ -17,7 +17,7 @@ export function PricingPreview() {
     <section id="pricing" className="bg-background py-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
         <div className="text-center">
-          <Eyebrow>Harga</Eyebrow>
+          <Eyebrow>Paket</Eyebrow>
           <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-bold leading-tight text-primary lg:text-[44px]">
             Paket yang Disesuaikan dengan Manuskripmu
           </h2>

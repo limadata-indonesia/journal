@@ -65,7 +65,7 @@ export function Services() {
 
         <div className="mt-12 flex justify-center">
           <LinkButton href="#pricing" variant="white">
-            Lihat Paket & Harga
+            Lihat Paket Layanan
           </LinkButton>
         </div>
       </div>

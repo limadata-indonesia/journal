@@ -8,7 +8,7 @@ import { LinkButton } from "./ui/Button";
 
 const NAV_LINKS = [
   { label: "Layanan", href: "#services" },
-  { label: "Harga", href: "#pricing" },
+  { label: "Paket", href: "#pricing" },
   { label: "Alur", href: "#alur" },
   { label: "Testimoni", href: "#testimoni" },
   { label: "FAQ", href: "#faq" },

@@ -211,22 +211,22 @@ export const ALUR_LAYANAN = [
   },
 ];
 
-// Harga bersifat ilustratif (mulai dari) — sesuaikan dengan penawaran aktual
-// sebelum go-live.
+// Harga tidak ditampilkan untuk sementara; setiap paket mengarahkan ke
+// konsultasi (Hubungi Kami).
 export const PRICING_TIERS = [
   {
     name: "Sinta Ready",
     tagline: "Untuk manuskrip berbahasa Indonesia menuju jurnal terakreditasi Sinta.",
-    price: "Mulai dari",
-    priceDetail: "Rp 3.500.000",
-    priceNote: "per manuskrip",
+    price: "Penawaran disesuaikan",
+    priceDetail: "Hubungi Kami",
+    priceNote: "sesuai panjang & kebutuhan manuskrip",
     features: ["Editing bahasa & kejelasan akademik", "Rekomendasi jurnal Sinta (S1–S6) sesuai bidang", "Cek plagiarisme & referensi Mendeley", "Pemformatan sesuai template jurnal", "Satu putaran revisi"],
   },
   {
     name: "Scopus Ready",
     tagline: "Untuk manuskrip berbahasa Inggris menuju jurnal terindeks Scopus.",
-    price: "Mulai dari",
-    priceDetail: "Rp 8.500.000",
+    price: "Penawaran disesuaikan",
+    priceDetail: "Hubungi Kami",
     priceNote: "tergantung kuartil jurnal (Q1–Q4)",
     features: ["Semua di Sinta Ready", "Scientific editing tingkat lanjut", "Pencocokan jurnal Scopus Q1–Q4", "Turut mencakup jurnal terindeks DOAJ, Web of Science & Copernicus", "Revisi tanpa batas"],
     highlighted: true,
