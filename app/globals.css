@@ -62,12 +62,6 @@
   --shadow-premium: 0 4px 10px rgba(28, 36, 104, 0.06), 0 18px 40px rgba(28, 36, 104, 0.1);
 
   --container-content: 1200px;
-
-  --animate-marquee: marquee 28s linear infinite;
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
 }
 
 @layer base {
@@ -87,8 +81,4 @@
     font-family: var(--font-heading);
     letter-spacing: -0.02em;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee { animation: none; }
 }

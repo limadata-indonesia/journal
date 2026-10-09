@@ -22,20 +22,22 @@ export function Eyebrow({ children, light = false, className }: { children: Reac
 type Bar = { left: string; width: string; from: string; to?: string; top?: string; opacity?: number };
 
 // Blurred vertical light bars. Each bar is a vertical gradient that fades to
-// transparent at its ends; together they give the "light streak" backdrop.
-export function Streaks({ bars, className }: { bars: Bar[]; className?: string }) {
+// transparent at its ends; the heavy blur lets neighbouring bars melt into one
+// soft glow instead of reading as separate stripes.
+export function Streaks({ bars, blur = 28, className }: { bars: Bar[]; blur?: number; className?: string }) {
   return (
-    <div aria-hidden className={clsx("pointer-events-none absolute inset-0 overflow-hidden", className)}>
+    <div aria-hidden className={clsx("pointer-events-none absolute inset-0", className)}>
       {bars.map((b, i) => (
         <span
           key={i}
-          className="absolute bottom-0 blur-[6px]"
+          className="absolute bottom-0"
           style={{
+            filter: `blur(${blur}px)`,
             left: b.left,
             width: b.width,
             top: b.top ?? "0",
             opacity: b.opacity ?? 1,
-            background: `linear-gradient(to bottom, transparent 0%, ${b.from} 35%, ${b.to ?? b.from} 70%, transparent 100%)`,
+            background: `linear-gradient(to bottom, transparent 0%, ${b.from} 40%, ${b.to ?? b.from} 75%, transparent 100%)`,
           }}
         />
       ))}
@@ -43,7 +45,13 @@ export function Streaks({ bars, className }: { bars: Bar[]; className?: string }
   );
 }
 
-// Solid colored circle, usually half-hidden behind a streak.
-export function Orb({ className, color }: { className?: string; color: string }) {
-  return <span aria-hidden className={clsx("pointer-events-none absolute rounded-full", className)} style={{ background: color }} />;
+// Soft round glow (a blurred circle), usually tucked behind a streak.
+export function Orb({ className, color, blur = 40 }: { className?: string; color: string; blur?: number }) {
+  return (
+    <span
+      aria-hidden
+      className={clsx("pointer-events-none absolute rounded-full", className)}
+      style={{ background: color, filter: `blur(${blur}px)` }}
+    />
+  );
 }

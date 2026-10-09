@@ -9,17 +9,17 @@ import { LinkButton } from "./ui/Button";
 const ICONS = { Target, PenLine, FileCheck2, MessageSquareReply };
 
 const TONES = {
-  peach: "from-[#f6d9d0] to-white",
-  periwinkle: "from-[#aebcff] to-white",
-  mint: "from-[#cdeedd] to-white",
-  cyan: "from-[#b9ecff] to-white",
+  peach: "from-[#e6ecff] to-white",
+  periwinkle: "from-[#dfe4ff] to-white",
+  mint: "from-[#e3efff] to-white",
+  cyan: "from-[#e1f1ff] to-white",
 };
 
 const SIDE_BARS = [
-  { left: "0%", width: "4%", from: "rgba(77,182,255,0.75)", to: "rgba(22,56,194,0.9)", top: "35%" },
-  { left: "4%", width: "6%", from: "rgba(77,182,255,0.4)", to: "rgba(22,56,194,0.8)", top: "45%" },
-  { left: "88%", width: "6%", from: "rgba(124,92,255,0.45)", to: "rgba(124,92,255,0.85)", top: "40%" },
-  { left: "94%", width: "6%", from: "rgba(77,182,255,0.6)", to: "rgba(22,56,194,0.9)", top: "30%" },
+  { left: "-2%", width: "8%", from: "rgba(77,182,255,0.45)", to: "rgba(22,56,194,0.75)", top: "35%" },
+  { left: "3%", width: "9%", from: "rgba(77,182,255,0.25)", to: "rgba(22,56,194,0.6)", top: "45%" },
+  { left: "88%", width: "9%", from: "rgba(124,92,255,0.25)", to: "rgba(77,100,230,0.6)", top: "40%" },
+  { left: "93%", width: "9%", from: "rgba(77,182,255,0.4)", to: "rgba(22,56,194,0.75)", top: "30%" },
 ];
 
 export function Services() {

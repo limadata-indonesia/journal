@@ -8,9 +8,8 @@ import { Eyebrow, Orb, Streaks } from "./ui/Decor";
 import { Button } from "./ui/Button";
 
 const CARD_BARS = [
-  { left: "62%", width: "14%", from: "rgba(77,182,255,0.35)", to: "rgba(255,255,255,0.12)" },
-  { left: "76%", width: "14%", from: "rgba(124,92,255,0.45)", to: "rgba(255,255,255,0.08)" },
-  { left: "90%", width: "10%", from: "rgba(77,182,255,0.5)", to: "rgba(255,255,255,0.1)" },
+  { left: "58%", width: "22%", from: "rgba(77,182,255,0.25)", to: "rgba(255,255,255,0.08)" },
+  { left: "78%", width: "22%", from: "rgba(124,92,255,0.2)", to: "rgba(255,255,255,0.06)" },
 ];
 
 export function PricingPreview() {
@@ -44,7 +43,7 @@ export function PricingPreview() {
               >
                 {hi && (
                   <>
-                    <Orb className="-right-16 -top-16 h-44 w-44 opacity-80" color="#4db6ff" />
+                    <Orb className="-right-16 -top-16 h-52 w-52 opacity-40" color="#4db6ff" blur={50} />
                     <Streaks bars={CARD_BARS} />
                   </>
                 )}

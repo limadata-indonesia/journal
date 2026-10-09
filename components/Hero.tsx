@@ -3,20 +3,10 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { LinkButton } from "./ui/Button";
-import { Orb, Streaks } from "./ui/Decor";
+import { Orb } from "./ui/Decor";
 import { HERO_SLIDES } from "@/lib/data";
 
 const AUTO_ADVANCE_MS = 6000;
-
-// Right-hand cluster of light bars, positioned relative to the streak box.
-const HERO_BARS = [
-  { left: "0%", width: "15%", from: "rgba(124,92,255,0.55)", to: "rgba(255,255,255,0.9)" },
-  { left: "14%", width: "15%", from: "rgba(77,182,255,0.35)", to: "rgba(255,255,255,0.95)" },
-  { left: "28%", width: "15%", from: "rgba(255,255,255,0.25)", to: "rgba(255,255,255,1)" },
-  { left: "42%", width: "15%", from: "rgba(22,56,194,0.6)", to: "rgba(255,255,255,0.9)" },
-  { left: "56%", width: "15%", from: "rgba(77,182,255,0.75)", to: "rgba(220,235,255,0.95)" },
-  { left: "70%", width: "15%", from: "rgba(77,182,255,0.55)", to: "rgba(255,226,204,0.9)" },
-];
 
 export function Hero() {
   const [active, setActive] = useState(0);
@@ -36,12 +26,12 @@ export function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Decorative streak cluster + orbs, right side */}
-      <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] md:block">
-        <Orb className="right-[8%] top-[17%] h-80 w-80" color="#4db6ff" />
-        <Orb className="left-[-4%] top-[55%] h-36 w-36" color="#7c5cff" />
-        <Orb className="right-[11%] top-[74%] h-16 w-16" color="#ff8a2b" />
-        <Streaks bars={HERO_BARS} className="right-[14%] left-[4%]" />
+      {/* Wireframe globe (same artwork as Daily Meaning, recoloured white) on a
+          soft blue glow, right side */}
+      <div aria-hidden className="pointer-events-none absolute right-[-12%] top-20 hidden aspect-square w-[50%] max-w-[680px] lg:block xl:right-[-6%]">
+        <Orb className="inset-[12%] opacity-70" color="#4db6ff" blur={90} />
+        <Orb className="bottom-[8%] left-[2%] h-40 w-40 opacity-35" color="#7c5cff" blur={60} />
+        <div className="absolute inset-0 bg-[url('/brand/globe-wireframe.svg')] bg-contain bg-no-repeat opacity-45 [mask-image:linear-gradient(to_bottom,black_55%,transparent_100%)]" />
       </div>
 
       <div className="relative mx-auto max-w-(--container-content) px-6 pb-36 pt-36 lg:px-10 lg:pb-48 lg:pt-44">

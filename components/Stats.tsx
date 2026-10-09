@@ -5,9 +5,9 @@ import { Orb, Streaks } from "./ui/Decor";
 import { STATS } from "@/lib/data";
 
 const INTRO_BARS = [
-  { left: "0%", width: "22%", from: "rgba(124,92,255,0.18)", to: "rgba(124,92,255,0.05)" },
-  { left: "22%", width: "26%", from: "rgba(77,182,255,0.25)", to: "rgba(77,182,255,0.55)" },
-  { left: "48%", width: "26%", from: "rgba(77,182,255,0.35)", to: "rgba(77,182,255,0.7)" },
+  { left: "0%", width: "35%", from: "rgba(124,92,255,0.1)", to: "rgba(124,92,255,0.05)" },
+  { left: "20%", width: "40%", from: "rgba(77,182,255,0.18)", to: "rgba(77,182,255,0.35)" },
+  { left: "45%", width: "40%", from: "rgba(77,182,255,0.22)", to: "rgba(77,182,255,0.4)" },
 ];
 
 // Intro split ("Manuskrip yang tepat sasaran...") followed by the stats row.
@@ -15,8 +15,8 @@ export function Stats() {
   return (
     <section id="why-us" className="relative overflow-hidden bg-background pb-24">
       <div aria-hidden className="pointer-events-none absolute bottom-0 left-[3%] hidden h-[360px] w-[260px] lg:block">
-        <Orb className="-left-5 top-[38%] h-12 w-12" color="#7c5cff" />
-        <Orb className="-bottom-24 left-[55%] h-56 w-56" color="#4db6ff" />
+        <Orb className="-left-8 top-[34%] h-24 w-24 opacity-30" color="#7c5cff" blur={30} />
+        <Orb className="-bottom-24 left-[45%] h-64 w-64 opacity-45" color="#4db6ff" blur={60} />
         <Streaks bars={INTRO_BARS} />
       </div>
 

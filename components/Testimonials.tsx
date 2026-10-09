@@ -15,10 +15,10 @@ const initials = (name: string) =>
     .join("");
 
 const BOTTOM_BARS = [
-  { left: "0%", width: "5%", from: "rgba(77,182,255,0.6)", to: "rgba(22,56,194,0.95)", top: "30%" },
-  { left: "6%", width: "4%", from: "rgba(124,92,255,0.25)", to: "rgba(22,56,194,0.8)", top: "45%" },
-  { left: "88%", width: "5%", from: "rgba(124,92,255,0.55)", to: "rgba(124,92,255,0.95)", top: "35%" },
-  { left: "94%", width: "6%", from: "rgba(77,182,255,0.55)", to: "rgba(22,56,194,0.95)", top: "25%" },
+  { left: "-2%", width: "8%", from: "rgba(77,182,255,0.45)", to: "rgba(22,56,194,0.75)", top: "30%" },
+  { left: "3%", width: "9%", from: "rgba(77,182,255,0.25)", to: "rgba(22,56,194,0.6)", top: "45%" },
+  { left: "88%", width: "9%", from: "rgba(124,92,255,0.25)", to: "rgba(77,100,230,0.6)", top: "35%" },
+  { left: "93%", width: "9%", from: "rgba(77,182,255,0.4)", to: "rgba(22,56,194,0.75)", top: "25%" },
 ];
 
 function QuoteMark() {
@@ -87,8 +87,8 @@ export function Testimonials() {
                 className={`flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft ${i < 2 ? "lg:col-span-3" : "lg:col-span-2"}`}
               >
                 <div className="relative h-28 overflow-hidden bg-[linear-gradient(120deg,#1235be,#1638c2_45%,#4db6ff)]">
-                  <span aria-hidden className="absolute -right-6 -top-10 h-32 w-32 rounded-full bg-violet/60 blur-sm" />
-                  <span aria-hidden className="absolute right-16 top-0 h-full w-10 bg-white/10 blur-[2px]" />
+                  <span aria-hidden className="absolute -right-8 -top-12 h-40 w-40 rounded-full bg-violet/35 blur-2xl" />
+                  <span aria-hidden className="absolute right-16 top-0 h-full w-16 bg-white/10 blur-xl" />
                   <span className="absolute bottom-4 left-6 grid h-12 w-12 place-items-center rounded-full bg-white text-base font-bold text-accent">
                     {initials(t.name)}
                   </span>

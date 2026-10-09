@@ -7,30 +7,17 @@ const LINKS = [
   { label: "FAQ", href: "#faq" },
 ];
 
-const MARQUEE = "Konsultasikan Manuskripmu Sekarang";
-
 const FOOTER_BARS = [
-  { left: "0%", width: "6%", from: "rgba(77,182,255,0.6)", to: "rgba(22,56,194,0.95)", top: "20%" },
-  { left: "7%", width: "4%", from: "rgba(124,92,255,0.25)", to: "rgba(22,56,194,0.8)", top: "35%" },
-  { left: "86%", width: "5%", from: "rgba(77,182,255,0.35)", to: "rgba(22,56,194,0.85)", top: "30%" },
-  { left: "91%", width: "9%", from: "rgba(124,92,255,0.55)", to: "rgba(124,92,255,0.95)", top: "15%" },
+  { left: "-2%", width: "8%", from: "rgba(77,182,255,0.45)", to: "rgba(22,56,194,0.75)", top: "20%" },
+  { left: "3%", width: "9%", from: "rgba(77,182,255,0.25)", to: "rgba(22,56,194,0.6)", top: "35%" },
+  { left: "88%", width: "9%", from: "rgba(124,92,255,0.25)", to: "rgba(77,100,230,0.6)", top: "30%" },
+  { left: "93%", width: "9%", from: "rgba(77,182,255,0.4)", to: "rgba(22,56,194,0.75)", top: "15%" },
 ];
 
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[linear-gradient(to_bottom,#f3f5fd_0%,#f3f5fd_38%,#9aa9e8_62%,#1638c2_88%)]">
       <Streaks bars={FOOTER_BARS} />
-
-      {/* Giant scrolling CTA */}
-      <a href="#pricing" className="relative block overflow-hidden pt-6" aria-label={MARQUEE}>
-        <div className="flex w-max animate-marquee whitespace-nowrap" aria-hidden>
-          {[0, 1].map((k) => (
-            <span key={k} className="pr-16 text-[72px] font-bold leading-none tracking-[-0.04em] text-accent sm:text-[120px] lg:text-[168px]">
-              {MARQUEE} <span className="text-sky">•</span>
-            </span>
-          ))}
-        </div>
-      </a>
 
       <div className="relative mx-auto max-w-(--container-content) px-6 pb-16 pt-24 lg:px-10">
         <div className="rounded-3xl bg-white px-8 py-10 shadow-premium lg:px-16 lg:py-12">
