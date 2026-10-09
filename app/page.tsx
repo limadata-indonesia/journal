@@ -1,9 +1,10 @@
 import { Hero } from "@/components/Hero";
 import { Stats } from "@/components/Stats";
-import { AlurLayanan } from "@/components/AlurLayanan";
+import { Challenges } from "@/components/Challenges";
+import { Services } from "@/components/Services";
 import { PricingPreview } from "@/components/PricingPreview";
+import { AlurLayanan } from "@/components/AlurLayanan";
 import { Testimonials } from "@/components/Testimonials";
-import { RekomendasiJurnalSection } from "@/components/RekomendasiJurnalSection";
 import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
@@ -11,10 +12,11 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Hero />
       <Stats />
+      <Challenges />
+      <Services />
       <PricingPreview />
       <AlurLayanan />
       <Testimonials />
-      <RekomendasiJurnalSection />
       <FAQ />
     </main>
   );

@@ -3,69 +3,69 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CircleCheck, CircleX } from "lucide-react";
 import { ALUR_LAYANAN } from "@/lib/data";
+import { Eyebrow } from "./ui/Decor";
+import { LinkButton } from "./ui/Button";
 
 export function AlurLayanan() {
   return (
-    <section className="bg-background py-24">
+    <section id="alur" className="bg-background pb-24">
       <div className="mx-auto max-w-(--container-content) px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-primary lg:text-4xl">Alur Layanan Jasa Publikasi Jurnal Terindeks</h2>
-          <p className="mt-4 text-lg text-muted">
-            Proses bertahap per termin pembayaran, dari pengiriman manuskrip hingga surat penerimaan (LoA) terbit.
+        <div className="text-center">
+          <Eyebrow>Alur Layanan</Eyebrow>
+          <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-bold leading-tight text-primary lg:text-[44px]">
+            Dari Manuskrip hingga LoA, Bertahap & Transparan
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-lg font-medium text-muted">
+            Pembayaran per termin mengikuti progres, dari pengiriman manuskrip hingga surat penerimaan terbit.
           </p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-3xl">
+        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-3xl bg-border lg:grid-cols-3">
           {ALUR_LAYANAN.map((group, gi) => (
-            <div key={group.termin} className="mb-14 last:mb-0">
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.4 }}
-                className="mb-8 flex items-center gap-3"
-              >
-                <span className="rounded-full bg-primary px-4 py-1.5 text-sm font-bold text-white">{group.termin}</span>
-                <span className="text-sm font-medium text-muted">{group.note}</span>
-              </motion.div>
+            <motion.div
+              key={group.termin}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: gi * 0.1 }}
+              className="bg-surface p-8 lg:p-10"
+            >
+              <p className="text-[32px] font-bold tracking-tight text-accent">{group.termin}</p>
+              <p className="mt-1 text-sm font-semibold text-primary">{group.note}</p>
 
-              <div className="relative flex flex-col gap-8 border-l-2 border-border pl-8">
-                {group.steps.map((step, si) => (
-                  <motion.div
-                    key={step.title}
-                    initial={{ opacity: 0, x: 12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ duration: 0.4, delay: si * 0.06 }}
-                    className="relative"
-                  >
-                    <span className="absolute -left-[calc(2rem+5px)] top-1 h-3 w-3 rounded-full border-2 border-primary bg-background" />
+              <ol className="relative mt-8 flex flex-col gap-7 border-l border-accent/25 pl-7">
+                {group.steps.map((step) => (
+                  <li key={step.title} className="relative">
+                    <span className="absolute -left-[calc(1.75rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-surface" />
+                    <p className="font-semibold leading-snug text-primary">{step.title}</p>
+                    {"detail" in step && step.detail && <p className="mt-1 text-sm text-muted">{step.detail}</p>}
 
-                    <p className="font-semibold text-text">{step.title}</p>
-                    {step.detail && <p className="mt-1 text-sm text-muted">{step.detail}</p>}
-
-                    {step.branch && (
-                      <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-xs font-semibold text-success">
+                    {"branch" in step && step.branch && (
+                      <div className="mt-3 flex flex-col gap-2">
+                        <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-xs font-semibold text-success">
                           <CircleCheck className="h-3.5 w-3.5" /> {step.branch.pass}
                         </span>
-                        <div className="inline-flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
-                          <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-warning/10 px-3 py-1 text-xs font-semibold text-warning">
-                            <CircleX className="h-3.5 w-3.5" /> {step.branch.fail}
+                        <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-warning/10 px-3 py-1 text-xs font-semibold text-warning">
+                          <CircleX className="h-3.5 w-3.5" /> {step.branch.fail}
+                        </span>
+                        {step.branch.failNote && (
+                          <span className="flex items-start gap-1 text-xs leading-relaxed text-muted">
+                            <ArrowRight className="mt-0.5 h-3 w-3 shrink-0" /> {step.branch.failNote}
                           </span>
-                          {step.branch.failNote && (
-                            <span className="flex items-center gap-1 text-xs text-muted">
-                              <ArrowRight className="h-3 w-3 shrink-0" /> {step.branch.failNote}
-                            </span>
-                          )}
-                        </div>
+                        )}
                       </div>
                     )}
-                  </motion.div>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ol>
+            </motion.div>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <LinkButton href="#faq" variant="outline">
+            Pelajari Skema Pembayaran
+          </LinkButton>
         </div>
       </div>
     </section>

@@ -241,42 +241,32 @@ export const PRICING_TIERS = [
   },
 ];
 
+// Nama disamarkan sebagian; jabatan, bidang, dan institusi sengaja tidak
+// ditampilkan demi privasi.
 export const TESTIMONIALS = [
   {
     quote: "Terindeks membantu kami memilih jurnal Sinta 2 yang tepat sesuai topik riset, bukan sekadar merapikan bahasa. Manuskrip kami diterima pada revisi pertama.",
-    name: "Dr. Anisa Rahman",
-    role: "Profesor Kesehatan Masyarakat",
-    institution: "Universitas Gadjah Mada",
+    name: "Dr. An*** Ra****",
   },
   {
     quote: "Tim Terindeks mendampingi kami dari pemilihan jurnal hingga menyusun respons untuk reviewer Scopus. Artikel kami akhirnya terindeks Scopus Q2 setelah dua kali revisi.",
-    name: "Dr. Bimo Prakoso",
-    role: "Dosen Teknik Elektro",
-    institution: "Institut Teknologi Bandung",
+    name: "Dr. Bi** Pr*****",
   },
   {
     quote: "Layanan pendampingan respons reviewer saja sudah menyelamatkan paper kami menuju jurnal Scopus Q1. Tepat sasaran, persuasif, dan cepat.",
-    name: "Priya Menon, MD",
-    role: "Kandidat PhD, Kedokteran Klinis",
-    institution: "NUS Singapore",
+    name: "Pr*** Me***, MD",
   },
   {
     quote: "Sebagai mahasiswa magister yang baru pertama kali submit ke jurnal Sinta, saya benar-benar terbantu dengan penjelasan tahap demi tahap dan template yang sudah disesuaikan bidang saya.",
-    name: "Siti Nurhaliza, S.T.",
-    role: "Mahasiswa Magister Teknik Industri",
-    institution: "Universitas Indonesia",
+    name: "Si** Nu*******, S.T.",
   },
   {
     quote: "Respons tim cepat dan transparan di setiap tahap. Draf saya sempat ditolak jurnal pertama, tapi tim membantu menyusun ulang strategi submisi ke jurnal Scopus Q3 yang akhirnya menerima.",
-    name: "Ahmad Fauzan, M.Kom.",
-    role: "Kandidat Doktor Ilmu Komputer",
-    institution: "Universitas Airlangga",
+    name: "Ah*** Fa****, M.Kom.",
   },
   {
     quote: "Editor kami memahami betul istilah di bidang manajemen dan ekonomi, bukan sekadar memperbaiki tata bahasa. Naskah kami lebih tajam argumentasinya setelah proses penyuntingan.",
-    name: "Dr. Farah Kusuma",
-    role: "Dosen Manajemen",
-    institution: "Universitas Padjadjaran",
+    name: "Dr. Fa*** Ku****",
   },
 ];
 
@@ -324,3 +314,55 @@ export const FAQ_ITEMS = [
 ];
 
 
+
+// Masalah umum peneliti, ditampilkan sebagai kartu "Tantangan".
+export const CHALLENGES = [
+  {
+    icon: "FileX",
+    title: "Ditolak di Tahap Awal",
+    body: "Manuskrip ditolak editor (desk reject) karena bahasa, struktur, atau argumentasi ilmiah belum memenuhi standar jurnal.",
+  },
+  {
+    icon: "Compass",
+    title: "Salah Memilih Jurnal",
+    body: "Scope tidak sesuai, peluang penerimaan tidak realistis, atau lebih buruk lagi, terjebak di jurnal predator.",
+  },
+  {
+    icon: "LayoutTemplate",
+    title: "Template & Format Rumit",
+    body: "Setiap jurnal punya gaya sitasi, template, dan dokumen submisi sendiri yang menyita waktu riset.",
+  },
+  {
+    icon: "MessagesSquare",
+    title: "Respons Reviewer",
+    body: "Komentar reviewer sudah di tangan, tapi menyusun jawaban yang persuasif dan tepat sasaran tidak mudah.",
+  },
+] as const;
+
+// Empat pilar layanan; `tone` memilih gradien pastel kartunya.
+export const SERVICES = [
+  {
+    icon: "Target",
+    title: "Rekomendasi Jurnal",
+    body: "Pemetaan bidang risetmu ke jurnal Sinta (S1–S6) atau Scopus (Q1–Q4) yang relevan dan realistis.",
+    tone: "peach",
+  },
+  {
+    icon: "PenLine",
+    title: "Editing Bahasa & Scientific Editing",
+    body: "Penyuntingan oleh editor sesuai bidang: bahasa, kejelasan akademik, struktur, dan kekuatan argumentasi.",
+    tone: "periwinkle",
+  },
+  {
+    icon: "FileCheck2",
+    title: "Format & Pendampingan Submisi",
+    body: "Pemformatan sesuai template, cek plagiarisme & referensi, hingga korespondensi dengan jurnal tujuan.",
+    tone: "mint",
+  },
+  {
+    icon: "MessageSquareReply",
+    title: "Respons Reviewer",
+    body: "Penyusunan respons untuk revisi minor maupun mayor, hingga manuskrip diterima (LoA).",
+    tone: "cyan",
+  },
+] as const;

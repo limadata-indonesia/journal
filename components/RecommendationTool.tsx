@@ -2,28 +2,35 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import clsx from "clsx";
 import { JOURNAL_FIELDS, JOURNAL_RECOMMENDATIONS, type JournalField } from "@/lib/data";
-import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
 
+// Card header gradients, cycled per card (Scopus gets the violet one).
+const HEADERS = [
+  "bg-[linear-gradient(135deg,#0f2899,#1638c2_55%,#4db6ff)]",
+  "bg-[linear-gradient(135deg,#1235be,#4db6ff)]",
+  "bg-[linear-gradient(135deg,#1c2468,#1638c2)]",
+];
+const SCOPUS_HEADER = "bg-[linear-gradient(135deg,#1638c2,#7c5cff)]";
+
 export function RecommendationTool() {
-  const [selected, setSelected] = useState<JournalField | null>(JOURNAL_FIELDS[0]);
+  const [selected, setSelected] = useState<JournalField>(JOURNAL_FIELDS[0]);
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2">
         {JOURNAL_FIELDS.map((field) => (
           <button
             key={field}
             type="button"
             onClick={() => setSelected(field)}
             className={clsx(
-              "rounded-full border px-4 py-2 text-sm font-medium transition",
+              "rounded-full border px-4 py-2 text-sm font-semibold transition",
               selected === field
                 ? "border-accent bg-accent text-white"
-                : "border-border bg-background text-text hover:border-accent/50"
+                : "border-border bg-surface text-primary hover:border-accent/50"
             )}
           >
             {field}
@@ -32,50 +39,57 @@ export function RecommendationTool() {
       </div>
 
       <AnimatePresence mode="wait">
-        {selected && (
-          <motion.div
-            key={selected}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3 }}
-            className="mt-10"
-          >
-            <p className="text-sm font-semibold text-muted">
-              Contoh jurnal untuk bidang &ldquo;{selected}&rdquo; — klik untuk membuka situs resmi jurnal
-            </p>
-            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-              {JOURNAL_RECOMMENDATIONS[selected].map((j) => (
-                <a key={j.name} href={j.url} target="_blank" rel="noopener noreferrer" className="group block">
-                  <Card className="flex h-full flex-col p-5">
-                    <div className="flex items-start justify-between gap-2">
-                      <span
-                        className={clsx(
-                          "rounded-full px-2.5 py-1 text-[11px] font-semibold",
-                          j.type === "Sinta" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"
-                        )}
-                      >
-                        {j.type} {j.tier}
-                      </span>
-                      <ExternalLink className="h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-accent" />
-                    </div>
-                    <p className="font-heading mt-3 text-base font-bold text-text">{j.name}</p>
-                    <p className="mt-1 text-sm text-muted">{j.focus}</p>
-                  </Card>
-                </a>
-              ))}
-            </div>
+        <motion.div
+          key={selected}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.3 }}
+          className="mt-10"
+        >
+          <p className="text-center text-sm font-medium text-muted">
+            Contoh jurnal untuk bidang &ldquo;{selected}&rdquo;, klik untuk membuka situs resmi jurnal
+          </p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {JOURNAL_RECOMMENDATIONS[selected].map((j, i) => (
+              <a
+                key={j.name}
+                href={j.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-premium"
+              >
+                <div className={clsx("relative flex h-28 items-end overflow-hidden p-4", j.type === "Scopus" ? SCOPUS_HEADER : HEADERS[i % HEADERS.length])}>
+                  <span aria-hidden className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-sky/50" />
+                  <span aria-hidden className="absolute right-10 top-0 h-full w-6 bg-white/15 blur-[2px]" />
+                  <span className="relative text-2xl font-bold tracking-tight text-white">
+                    {j.type} <span className="text-white/75">{j.tier}</span>
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="text-[15px] font-semibold leading-snug text-primary">{j.name}</p>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{j.focus}</p>
+                  <span className="mt-5 flex items-center gap-2.5 text-sm font-semibold text-primary">
+                    <span className="grid h-7 w-7 place-items-center rounded-full bg-primary text-white transition group-hover:bg-accent">
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </span>
+                    Kunjungi Jurnal
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
 
-            <div className="mt-8 flex flex-col items-start gap-3 rounded border border-border bg-surface p-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-muted">
-                Ini contoh jurnal nyata di bidang tersebut, bukan rekomendasi yang dipersonalisasi. Untuk rekomendasi yang sesuai manuskrip dan target akreditasimu, konsultasikan langsung dengan tim editor kami.
-              </p>
-              <LinkButton href="#pricing" className="shrink-0">
-                Konsultasikan Manuskripmu <ArrowRight className="h-4 w-4" />
-              </LinkButton>
-            </div>
-          </motion.div>
-        )}
+          <div className="mt-10 flex flex-col items-start gap-5 rounded-2xl bg-surface p-6 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+            <p className="max-w-2xl text-sm leading-relaxed text-muted">
+              Ini contoh jurnal nyata di bidang tersebut, bukan rekomendasi yang dipersonalisasi. Untuk rekomendasi yang sesuai
+              manuskrip dan target akreditasimu, konsultasikan langsung dengan tim editor kami.
+            </p>
+            <LinkButton href="#pricing" className="shrink-0">
+              Konsultasikan Manuskripmu
+            </LinkButton>
+          </div>
+        </motion.div>
       </AnimatePresence>
     </div>
   );
