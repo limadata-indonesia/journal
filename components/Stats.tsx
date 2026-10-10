@@ -29,7 +29,7 @@ export function Stats() {
             transition={{ duration: 0.5 }}
             className="text-[2rem] font-semibold leading-[1.15] text-primary lg:text-[44px]"
           >
-            Manuskrip yang Tepat Sasaran Adalah Kunci Publikasi yang Berhasil.
+            Manuskrip yang Tepat Sasaran Adalah Kunci Keberhasilan Publikasi.
           </motion.h2>
 
           <motion.div
